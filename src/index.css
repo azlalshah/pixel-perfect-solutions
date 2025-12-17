@@ -101,7 +101,12 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    cursor: none;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      cursor: none;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
