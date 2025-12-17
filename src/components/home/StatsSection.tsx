@@ -17,53 +17,69 @@ const StatsSection = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: 'top 80%',
-        onEnter: () => {
-          if (!hasAnimated) {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
             setHasAnimated(true);
+            
+            // Animate each counter
             stats.forEach((stat, index) => {
-              gsap.to(
-                {},
-                {
-                  duration: 2,
-                  ease: 'power2.out',
-                  onUpdate: function () {
-                    setCounters((prev) => {
-                      const newCounters = [...prev];
-                      newCounters[index] = Math.floor(
-                        this.progress() * stat.value
-                      );
-                      return newCounters;
-                    });
-                  },
+              const duration = 2000; // 2 seconds
+              const startTime = Date.now();
+              
+              const animate = () => {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Easing function (ease-out)
+                const easedProgress = 1 - Math.pow(1 - progress, 3);
+                const currentValue = Math.floor(easedProgress * stat.value);
+                
+                setCounters((prev) => {
+                  const newCounters = [...prev];
+                  newCounters[index] = currentValue;
+                  return newCounters;
+                });
+                
+                if (progress < 1) {
+                  requestAnimationFrame(animate);
                 }
-              );
+              };
+              
+              requestAnimationFrame(animate);
             });
           }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(section);
+
+    // GSAP animations for fade-in
+    gsap.fromTo(
+      '.stat-item',
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 80%',
         },
-      });
+      }
+    );
 
-      gsap.fromTo(
-        '.stat-item',
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.15,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-          },
-        }
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
+    return () => {
+      observer.disconnect();
+    };
   }, [hasAnimated]);
 
   return (
