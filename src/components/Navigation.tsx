@@ -156,6 +156,15 @@ const Navigation = () => {
           isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       >
+        {/* Close button inside mobile menu */}
+        <button
+          className="absolute top-5 right-4 p-2 glass rounded-lg hover:bg-muted/50 transition-colors z-10"
+          onClick={() => setIsOpen(false)}
+          aria-label="Close menu"
+        >
+          <X className="w-6 h-6 text-foreground" />
+        </button>
+        
         <div className="flex flex-col items-center justify-center h-full gap-4 px-6">
           {navLinks.map((link) => (
             <div key={link.name} className="mobile-nav-item w-full max-w-xs text-center">
