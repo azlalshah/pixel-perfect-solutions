@@ -30,7 +30,7 @@ const CustomCursor = () => {
     const handleMouseEnter = () => {
       gsap.to(cursor, {
         scale: 1.5,
-        borderColor: 'hsl(var(--primary))',
+        borderColor: '#a855f7',
         duration: 0.3,
       });
     };
@@ -38,7 +38,7 @@ const CustomCursor = () => {
     const handleMouseLeave = () => {
       gsap.to(cursor, {
         scale: 1,
-        borderColor: 'hsl(var(--foreground))',
+        borderColor: '#ffffff',
         duration: 0.3,
       });
     };
@@ -46,8 +46,7 @@ const CustomCursor = () => {
     const handleLinkEnter = () => {
       gsap.to(cursor, {
         scale: 2,
-        backgroundColor: 'hsl(var(--primary) / 0.2)',
-        mixBlendMode: 'difference',
+        backgroundColor: 'rgba(168, 85, 247, 0.2)',
         duration: 0.3,
       });
     };
@@ -56,7 +55,6 @@ const CustomCursor = () => {
       gsap.to(cursor, {
         scale: 1,
         backgroundColor: 'transparent',
-        mixBlendMode: 'normal',
         duration: 0.3,
       });
     };
