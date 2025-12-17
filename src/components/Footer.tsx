@@ -32,8 +32,8 @@ const Footer = () => {
       { name: 'Portfolio', path: '/portfolio' },
       { name: 'Blog', path: '/blog' },
       { name: 'Contact', path: '/contact' },
-      { name: 'Privacy Policy', path: '/privacy' },
-      { name: 'Terms of Service', path: '/terms' },
+      { name: 'Privacy Policy', path: '/privacy-policy' },
+      { name: 'Terms of Service', path: '/terms-of-service' },
     ],
   };
 
