@@ -120,9 +120,11 @@ const Navigation = () => {
 
         {/* CTA Button */}
         <div className="hidden lg:block">
-          <Button className="gradient-bg hover:opacity-90 transition-opacity">
-            Get Started
-          </Button>
+          <Link to="/contact">
+            <Button className="gradient-bg hover:opacity-90 transition-opacity">
+              Get Started
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -156,9 +158,11 @@ const Navigation = () => {
               </div>
             ))}
             <div className="mobile-nav-item mt-4">
-              <Button className="gradient-bg hover:opacity-90 transition-opacity text-lg px-8 py-6">
-                Get Started
-              </Button>
+              <Link to="/contact" onClick={() => setIsOpen(false)}>
+                <Button className="gradient-bg hover:opacity-90 transition-opacity text-lg px-8 py-6">
+                  Get Started
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
