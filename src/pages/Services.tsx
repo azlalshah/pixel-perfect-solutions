@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Code, Palette, Megaphone, Smartphone, Cloud, ArrowRight, Check } from 'lucide-react';
+import { Code, Palette, Megaphone, Smartphone, Cloud, Video, Pen, Target, Server, Layout, ShoppingCart, Globe, Layers, FileCode, Package, ArrowRight, Check } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,7 +18,7 @@ const Services = () => {
         {
           opacity: 1,
           y: 0,
-          stagger: 0.15,
+          stagger: 0.1,
           duration: 0.6,
           ease: 'power3.out',
           scrollTrigger: {
@@ -73,6 +73,86 @@ const Services = () => {
       link: '/services/cloud-devops',
       gradient: 'from-blue-500 to-purple-500',
     },
+    {
+      icon: Video,
+      title: 'Video Animation',
+      description: 'Captivating 2D/3D animations and motion graphics that tell your story effectively.',
+      features: ['2D Animation', '3D Animation', 'Motion Graphics', 'Explainer Videos'],
+      link: '/services/video-animation',
+      gradient: 'from-red-500 to-pink-500',
+    },
+    {
+      icon: Pen,
+      title: 'Logo Design',
+      description: 'Memorable, timeless logos that perfectly represent your brand identity and values.',
+      features: ['Custom Designs', 'Multiple Concepts', 'Full Ownership', 'Brand Files'],
+      link: '/services/logo-design',
+      gradient: 'from-indigo-500 to-purple-500',
+    },
+    {
+      icon: Target,
+      title: 'Branding',
+      description: 'Comprehensive brand identity that resonates with your audience and stands out.',
+      features: ['Brand Strategy', 'Visual Identity', 'Brand Guidelines', 'Marketing Assets'],
+      link: '/services/branding',
+      gradient: 'from-cyan-500 to-blue-500',
+    },
+    {
+      icon: Server,
+      title: 'Backend Development',
+      description: 'Robust, scalable backend systems that power your applications reliably.',
+      features: ['API Development', 'Database Design', 'Microservices', 'Security'],
+      link: '/services/backend-development',
+      gradient: 'from-slate-500 to-gray-700',
+    },
+    {
+      icon: Layout,
+      title: 'WordPress Development',
+      description: 'Custom WordPress solutions with themes, plugins, and performance optimization.',
+      features: ['Custom Themes', 'Plugin Development', 'WooCommerce', 'Maintenance'],
+      link: '/services/wordpress',
+      gradient: 'from-blue-600 to-indigo-600',
+    },
+    {
+      icon: ShoppingCart,
+      title: 'Shopify Development',
+      description: 'High-converting Shopify stores that help you sell more and grow your business.',
+      features: ['Store Setup', 'Custom Themes', 'Payment Integration', 'App Integration'],
+      link: '/services/shopify',
+      gradient: 'from-green-600 to-emerald-500',
+    },
+    {
+      icon: Globe,
+      title: 'Wix Development',
+      description: 'Professional Wix websites that are beautiful and easy to manage.',
+      features: ['Custom Design', 'E-commerce', 'SEO Setup', 'Training'],
+      link: '/services/wix',
+      gradient: 'from-yellow-500 to-orange-500',
+    },
+    {
+      icon: Layers,
+      title: 'Webflow Development',
+      description: 'Premium Webflow websites with advanced animations and CMS integration.',
+      features: ['Visual Design', 'Interactions', 'CMS Setup', 'Hosting'],
+      link: '/services/webflow',
+      gradient: 'from-violet-500 to-purple-600',
+    },
+    {
+      icon: FileCode,
+      title: 'Squarespace Development',
+      description: 'Elegant Squarespace websites perfect for creatives and small businesses.',
+      features: ['Template Customization', 'Portfolio Sites', 'E-commerce', 'Blog Setup'],
+      link: '/services/squarespace',
+      gradient: 'from-gray-700 to-black',
+    },
+    {
+      icon: Package,
+      title: 'Premade Templates',
+      description: 'Ready-to-use website templates customized to your brand for quick launches.',
+      features: ['Quick Setup', 'Customization', 'Multiple Categories', 'Support'],
+      link: '/services/premade-templates',
+      gradient: 'from-teal-500 to-cyan-500',
+    },
   ];
 
   return (
@@ -103,40 +183,33 @@ const Services = () => {
       {/* Services Grid */}
       <section className="py-20">
         <div className="container-custom services-grid">
-          <div className="grid gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="service-card glass rounded-2xl p-8 hover:scale-[1.02] transition-transform duration-300"
+                className="service-card glass rounded-2xl p-6 hover:scale-[1.02] transition-transform duration-300"
               >
-                <div className="flex flex-col lg:flex-row gap-8">
-                  <div className="flex-1">
-                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.gradient} flex items-center justify-center mb-6`}>
-                      <service.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-heading font-bold mb-4">{service.title}</h3>
-                    <p className="text-muted-foreground mb-6">{service.description}</p>
-                    <Link to={service.link}>
-                      <Button className="gradient-bg group">
-                        Learn More
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
-                  </div>
-                  <div className="lg:w-80">
-                    <h4 className="text-sm font-semibold text-primary mb-4">Key Features</h4>
-                    <ul className="space-y-3">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-3">
-                          <div className="w-5 h-5 rounded-full gradient-bg flex items-center justify-center">
-                            <Check className="w-3 h-3 text-white" />
-                          </div>
-                          <span className="text-muted-foreground">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${service.gradient} flex items-center justify-center mb-5`}>
+                  <service.icon className="w-7 h-7 text-white" />
                 </div>
+                <h3 className="text-xl font-heading font-bold mb-3">{service.title}</h3>
+                <p className="text-muted-foreground mb-4 text-sm">{service.description}</p>
+                <ul className="space-y-2 mb-5">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center gap-2 text-sm">
+                      <div className="w-4 h-4 rounded-full gradient-bg flex items-center justify-center">
+                        <Check className="w-2.5 h-2.5 text-white" />
+                      </div>
+                      <span className="text-muted-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link to={service.link}>
+                  <Button variant="outline" size="sm" className="w-full group">
+                    Learn More
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </div>
             ))}
           </div>
