@@ -6,7 +6,16 @@ import {
   TrendingUp,
   Smartphone,
   Cloud,
-  Shield,
+  Video,
+  Pen,
+  Target,
+  Server,
+  Layout,
+  ShoppingCart,
+  Globe,
+  Layers,
+  FileCode,
+  Package,
   ArrowRight,
 } from 'lucide-react';
 import gsap from 'gsap';
@@ -18,50 +27,107 @@ const services = [
   {
     icon: Code,
     title: 'Web Development',
-    description:
-      'Custom websites and web applications built with modern technologies for optimal performance.',
+    description: 'Custom websites and web applications built with modern technologies for optimal performance.',
     color: 'primary',
     path: '/services/web-development',
   },
   {
     icon: Palette,
     title: 'UI/UX Design',
-    description:
-      'User-centered design that creates intuitive and engaging digital experiences.',
+    description: 'User-centered design that creates intuitive and engaging digital experiences.',
     color: 'secondary',
     path: '/services/ui-ux-design',
   },
   {
     icon: TrendingUp,
     title: 'Digital Marketing',
-    description:
-      'Strategic marketing solutions including SEO, PPC, and social media management.',
+    description: 'Strategic marketing solutions including SEO, PPC, and social media management.',
     color: 'accent',
     path: '/services/digital-marketing',
   },
   {
     icon: Smartphone,
     title: 'Mobile Development',
-    description:
-      'Native and cross-platform mobile apps that deliver exceptional user experiences.',
+    description: 'Native and cross-platform mobile apps that deliver exceptional user experiences.',
     color: 'highlight',
     path: '/services/mobile-development',
   },
   {
     icon: Cloud,
     title: 'Cloud & DevOps',
-    description:
-      'Scalable cloud infrastructure and DevOps practices for reliable deployments.',
+    description: 'Scalable cloud infrastructure and DevOps practices for reliable deployments.',
     color: 'primary',
     path: '/services/cloud-devops',
   },
   {
-    icon: Shield,
-    title: 'Cybersecurity',
-    description:
-      'Comprehensive security solutions to protect your digital assets and data.',
+    icon: Video,
+    title: 'Video Animation',
+    description: 'Captivating 2D/3D animations and motion graphics that tell your story.',
     color: 'secondary',
-    path: '/services/cybersecurity',
+    path: '/services/video-animation',
+  },
+  {
+    icon: Pen,
+    title: 'Logo Design',
+    description: 'Memorable logos that perfectly represent your brand identity and values.',
+    color: 'accent',
+    path: '/services/logo-design',
+  },
+  {
+    icon: Target,
+    title: 'Branding',
+    description: 'Comprehensive brand identity that resonates with your audience.',
+    color: 'highlight',
+    path: '/services/branding',
+  },
+  {
+    icon: Server,
+    title: 'Backend Development',
+    description: 'Robust, scalable backend systems that power your applications.',
+    color: 'primary',
+    path: '/services/backend-development',
+  },
+  {
+    icon: Layout,
+    title: 'WordPress',
+    description: 'Custom WordPress solutions with themes, plugins, and optimization.',
+    color: 'secondary',
+    path: '/services/wordpress',
+  },
+  {
+    icon: ShoppingCart,
+    title: 'Shopify',
+    description: 'High-converting Shopify stores that help you sell more online.',
+    color: 'accent',
+    path: '/services/shopify',
+  },
+  {
+    icon: Globe,
+    title: 'Wix',
+    description: 'Professional Wix websites that are beautiful and easy to manage.',
+    color: 'highlight',
+    path: '/services/wix',
+  },
+  {
+    icon: Layers,
+    title: 'Webflow',
+    description: 'Premium Webflow websites with advanced animations and CMS.',
+    color: 'primary',
+    path: '/services/webflow',
+  },
+  {
+    icon: FileCode,
+    title: 'Squarespace',
+    description: 'Elegant Squarespace websites perfect for creatives and businesses.',
+    color: 'secondary',
+    path: '/services/squarespace',
+  },
+  {
+    icon: Package,
+    title: 'Premade Templates',
+    description: 'Ready-to-use templates customized to your brand for quick launches.',
+    color: 'accent',
+    path: '/services/premade-templates',
   },
 ];
 
@@ -95,7 +161,7 @@ const ServicesSection = () => {
           y: 0,
           scale: 1,
           duration: 0.6,
-          stagger: 0.1,
+          stagger: 0.08,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: '.services-grid',
@@ -130,14 +196,14 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="services-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="services-grid grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <Link
                 key={index}
                 to={service.path}
-                className="service-card group relative p-8 rounded-2xl glass border border-border/50 hover:border-primary/50 transition-all duration-500 overflow-hidden"
+                className="service-card group relative p-5 rounded-xl glass border border-border/50 hover:border-primary/50 transition-all duration-500 overflow-hidden"
                 data-cursor="link"
               >
                 {/* Gradient Overlay on Hover */}
@@ -145,27 +211,23 @@ const ServicesSection = () => {
 
                 {/* Icon */}
                 <div
-                  className={`relative w-14 h-14 rounded-xl bg-${service.color}/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  className={`relative w-10 h-10 rounded-lg bg-${service.color}/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}
                 >
-                  <Icon className={`w-7 h-7 text-${service.color}`} />
+                  <Icon className={`w-5 h-5 text-${service.color}`} />
                 </div>
 
                 {/* Content */}
-                <h3 className="relative text-xl font-heading font-semibold mb-3 group-hover:text-primary transition-colors">
+                <h3 className="relative text-sm font-heading font-semibold mb-2 group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
-                <p className="relative text-muted-foreground mb-4">
+                <p className="relative text-xs text-muted-foreground line-clamp-2">
                   {service.description}
                 </p>
 
                 {/* Arrow */}
-                <div className="relative flex items-center text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-2">
-                  <span className="text-sm font-medium mr-2">Learn More</span>
+                <div className="relative flex items-center text-primary mt-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <ArrowRight className="w-4 h-4" />
                 </div>
-
-                {/* Corner Accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Link>
             );
           })}

@@ -20,6 +20,16 @@ import UIUXDesign from "./pages/services/UIUXDesign";
 import DigitalMarketing from "./pages/services/DigitalMarketing";
 import MobileDevelopment from "./pages/services/MobileDevelopment";
 import CloudDevOps from "./pages/services/CloudDevOps";
+import VideoAnimation from "./pages/services/VideoAnimation";
+import LogoDesign from "./pages/services/LogoDesign";
+import Branding from "./pages/services/Branding";
+import BackendDevelopment from "./pages/services/BackendDevelopment";
+import WordPress from "./pages/services/WordPress";
+import Shopify from "./pages/services/Shopify";
+import Wix from "./pages/services/Wix";
+import Webflow from "./pages/services/Webflow";
+import Squarespace from "./pages/services/Squarespace";
+import PremadeTemplates from "./pages/services/PremadeTemplates";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +50,16 @@ const App = () => (
           <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
           <Route path="/services/mobile-development" element={<MobileDevelopment />} />
           <Route path="/services/cloud-devops" element={<CloudDevOps />} />
+          <Route path="/services/video-animation" element={<VideoAnimation />} />
+          <Route path="/services/logo-design" element={<LogoDesign />} />
+          <Route path="/services/branding" element={<Branding />} />
+          <Route path="/services/backend-development" element={<BackendDevelopment />} />
+          <Route path="/services/wordpress" element={<WordPress />} />
+          <Route path="/services/shopify" element={<Shopify />} />
+          <Route path="/services/wix" element={<Wix />} />
+          <Route path="/services/webflow" element={<Webflow />} />
+          <Route path="/services/squarespace" element={<Squarespace />} />
+          <Route path="/services/premade-templates" element={<PremadeTemplates />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
