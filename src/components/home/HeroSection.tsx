@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Play, CheckCircle } from 'lucide-react';
+import { ArrowRight, Play, CheckCircle, Clock, Headphones, ThumbsUp, Users, Award, Globe } from 'lucide-react';
 import gsap from 'gsap';
 import heroImage from '@/assets/hero-image.png';
 
@@ -189,22 +189,60 @@ const HeroSection = () => {
         </div>
 
         {/* Bottom Stats Row */}
-        <div className="hero-stats flex flex-wrap justify-center gap-6 md:gap-10 mt-16 pt-8 border-t border-border/50">
-          <div className="text-left">
-            <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">8+</div>
-            <div className="text-sm text-muted-foreground mt-1">Years Experience</div>
+        <div className="hero-stats flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16 mt-20 pt-10 border-t border-border/50">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+              <Clock className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">8+</div>
+              <div className="text-sm text-muted-foreground">Years Experience</div>
+            </div>
           </div>
-          <div className="text-left">
-            <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">24/7</div>
-            <div className="text-sm text-muted-foreground mt-1">Support Available</div>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+              <Headphones className="w-6 h-6 text-secondary" />
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">24/7</div>
+              <div className="text-sm text-muted-foreground">Support Available</div>
+            </div>
           </div>
-          <div className="text-left">
-            <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">99%</div>
-            <div className="text-sm text-muted-foreground mt-1">Client Satisfaction</div>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+              <ThumbsUp className="w-6 h-6 text-accent" />
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">99%</div>
+              <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+            </div>
           </div>
-          <div className="text-left">
-            <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">15+</div>
-            <div className="text-sm text-muted-foreground mt-1">Team Experts</div>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center">
+              <Users className="w-6 h-6 text-highlight" />
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">15+</div>
+              <div className="text-sm text-muted-foreground">Team Experts</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+              <Award className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">50+</div>
+              <div className="text-sm text-muted-foreground">Awards Won</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+              <Globe className="w-6 h-6 text-secondary" />
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">20+</div>
+              <div className="text-sm text-muted-foreground">Countries Served</div>
+            </div>
           </div>
         </div>
       </div>
