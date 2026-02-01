@@ -8,7 +8,23 @@ const Portfolio = () => {
   const [filter, setFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
-  const categories = ['all', 'web', 'mobile', 'design', 'marketing'];
+  const categories = [
+    { id: 'all', label: 'All' },
+    { id: 'web', label: 'Web Development' },
+    { id: 'mobile', label: 'Mobile Apps' },
+    { id: 'design', label: 'UI/UX Design' },
+    { id: 'marketing', label: 'Digital Marketing' },
+    { id: 'animation', label: 'Video Animation' },
+    { id: 'logo', label: 'Logo Design' },
+    { id: 'branding', label: 'Branding' },
+    { id: 'backend', label: 'Backend' },
+    { id: 'wordpress', label: 'WordPress' },
+    { id: 'shopify', label: 'Shopify' },
+    { id: 'wix', label: 'Wix' },
+    { id: 'webflow', label: 'Webflow' },
+    { id: 'squarespace', label: 'Squarespace' },
+    { id: 'templates', label: 'Templates' },
+  ];
 
   const projects = [
     {
@@ -58,8 +74,8 @@ const Portfolio = () => {
     },
     {
       id: 6,
-      title: 'Brand Identity Design',
-      category: 'design',
+      title: 'Tech Startup Branding',
+      category: 'branding',
       description: 'Complete brand identity including logo, color palette, typography, and brand guidelines.',
       tech: ['Illustrator', 'Brand Strategy', 'Guidelines'],
       image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&auto=format&fit=crop',
@@ -67,7 +83,7 @@ const Portfolio = () => {
     },
     {
       id: 7,
-      title: 'SEO Campaign',
+      title: 'SEO Campaign - Tech Co',
       category: 'marketing',
       description: 'Comprehensive SEO strategy that increased organic traffic by 300% in 6 months.',
       tech: ['SEO', 'Content Strategy', 'Analytics'],
@@ -82,6 +98,114 @@ const Portfolio = () => {
       tech: ['React', 'Node.js', 'Three.js'],
       image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop',
       color: 'from-indigo-500 to-purple-500',
+    },
+    {
+      id: 9,
+      title: 'Product Explainer Video',
+      category: 'animation',
+      description: '2D animated explainer video showcasing SaaS product features and benefits.',
+      tech: ['After Effects', '2D Animation', 'Motion Graphics'],
+      image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&auto=format&fit=crop',
+      color: 'from-red-500 to-pink-500',
+    },
+    {
+      id: 10,
+      title: 'Fintech Logo Design',
+      category: 'logo',
+      description: 'Modern, minimalist logo design for a financial technology startup.',
+      tech: ['Illustrator', 'Logo Design', 'Brand Mark'],
+      image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop',
+      color: 'from-blue-600 to-indigo-600',
+    },
+    {
+      id: 11,
+      title: 'API Gateway System',
+      category: 'backend',
+      description: 'Scalable API gateway with rate limiting, authentication, and monitoring.',
+      tech: ['Node.js', 'Redis', 'PostgreSQL', 'Docker'],
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop',
+      color: 'from-slate-600 to-gray-800',
+    },
+    {
+      id: 12,
+      title: 'Law Firm Website',
+      category: 'wordpress',
+      description: 'Professional WordPress website with case studies, attorney profiles, and contact forms.',
+      tech: ['WordPress', 'Custom Theme', 'SEO'],
+      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&auto=format&fit=crop',
+      color: 'from-blue-700 to-indigo-700',
+    },
+    {
+      id: 13,
+      title: 'Fashion E-commerce Store',
+      category: 'shopify',
+      description: 'High-converting Shopify store with custom theme and product recommendations.',
+      tech: ['Shopify', 'Liquid', 'Custom Apps'],
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop',
+      color: 'from-green-600 to-emerald-500',
+    },
+    {
+      id: 14,
+      title: 'Photography Portfolio',
+      category: 'wix',
+      description: 'Stunning Wix portfolio site for a professional photographer with gallery and booking.',
+      tech: ['Wix', 'Wix Bookings', 'Custom Design'],
+      image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&auto=format&fit=crop',
+      color: 'from-yellow-500 to-orange-500',
+    },
+    {
+      id: 15,
+      title: 'Creative Agency Site',
+      category: 'webflow',
+      description: 'Award-winning Webflow site with complex animations and CMS integration.',
+      tech: ['Webflow', 'Animations', 'CMS'],
+      image: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&auto=format&fit=crop',
+      color: 'from-violet-500 to-purple-600',
+    },
+    {
+      id: 16,
+      title: 'Restaurant Website',
+      category: 'squarespace',
+      description: 'Elegant Squarespace site for upscale restaurant with menu and reservations.',
+      tech: ['Squarespace', 'OpenTable', 'Custom CSS'],
+      image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&auto=format&fit=crop',
+      color: 'from-gray-700 to-black',
+    },
+    {
+      id: 17,
+      title: 'Business Starter Kit',
+      category: 'templates',
+      description: 'Ready-to-use business website template with all essential pages and features.',
+      tech: ['React', 'Tailwind', 'Pre-built'],
+      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&auto=format&fit=crop',
+      color: 'from-teal-500 to-cyan-500',
+    },
+    {
+      id: 18,
+      title: '3D Product Animation',
+      category: 'animation',
+      description: 'Stunning 3D product visualization and animation for marketing campaign.',
+      tech: ['Cinema 4D', '3D Animation', 'Rendering'],
+      image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&auto=format&fit=crop',
+      color: 'from-purple-600 to-pink-600',
+    },
+    {
+      id: 19,
+      title: 'Cafe Logo & Branding',
+      category: 'logo',
+      description: 'Warm, inviting logo and brand identity for artisan coffee shop.',
+      tech: ['Illustrator', 'Branding', 'Packaging'],
+      image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop',
+      color: 'from-amber-600 to-orange-600',
+    },
+    {
+      id: 20,
+      title: 'Microservices Architecture',
+      category: 'backend',
+      description: 'Enterprise microservices backend with event-driven architecture.',
+      tech: ['Go', 'Kubernetes', 'RabbitMQ', 'MongoDB'],
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop',
+      color: 'from-cyan-600 to-blue-600',
     },
   ];
 
@@ -122,18 +246,18 @@ const Portfolio = () => {
       {/* Filter Buttons */}
       <section className="py-8">
         <div className="container-custom">
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3">
             {categories.map((cat) => (
               <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  filter === cat
+                key={cat.id}
+                onClick={() => setFilter(cat.id)}
+                className={`px-4 py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${
+                  filter === cat.id
                     ? 'gradient-bg text-white'
                     : 'glass hover:bg-muted'
                 }`}
               >
-                {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                {cat.label}
               </button>
             ))}
           </div>
