@@ -6,91 +6,90 @@
 
 @layer base {
   :root {
-    /* Dark theme as primary for tech website */
-    --background: 240 20% 4%;
-    --foreground: 0 0% 98%;
+    /* Professional Light Theme */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
-    --card: 240 15% 8%;
-    --card-foreground: 0 0% 98%;
+    --card: 210 40% 98%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 240 15% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Vibrant purple primary */
-    --primary: 270 80% 60%;
+    /* Deep Blue primary - trustworthy, professional */
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    /* Cyan secondary */
-    --secondary: 190 90% 50%;
+    /* Teal secondary - modern, fresh */
+    --secondary: 168 84% 39%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Muted dark tones */
-    --muted: 240 10% 15%;
-    --muted-foreground: 240 5% 65%;
+    /* Soft muted tones */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    /* Pink accent */
-    --accent: 330 85% 60%;
+    /* Orange accent - energetic CTAs */
+    --accent: 24 95% 53%;
     --accent-foreground: 0 0% 100%;
 
-    /* Orange for highlights */
-    --highlight: 25 95% 55%;
+    /* Highlight color */
+    --highlight: 262 83% 58%;
     --highlight-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 10% 20%;
-    --input: 240 10% 15%;
-    --ring: 270 80% 60%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
 
     --radius: 0.75rem;
 
     /* Gradient colors */
-    --gradient-purple: 270 80% 60%;
-    --gradient-blue: 220 90% 55%;
-    --gradient-cyan: 190 90% 50%;
-    --gradient-pink: 330 85% 60%;
-    --gradient-orange: 25 95% 55%;
+    --gradient-blue: 217 91% 60%;
+    --gradient-teal: 168 84% 39%;
+    --gradient-orange: 24 95% 53%;
+    --gradient-purple: 262 83% 58%;
 
-    /* Glass effect */
-    --glass: 240 15% 8% / 0.7;
-    --glass-border: 240 10% 30%;
+    /* Glass effect for light theme */
+    --glass: 0 0% 100% / 0.8;
+    --glass-border: 214 32% 85%;
   }
 
-  .light {
-    --background: 0 0% 100%;
-    --foreground: 240 20% 10%;
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 98%;
-    --card-foreground: 240 20% 10%;
+    --card: 222 47% 14%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 20% 10%;
+    --popover: 222 47% 14%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 270 80% 55%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 190 85% 45%;
+    --secondary: 168 84% 45%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 5% 92%;
-    --muted-foreground: 240 5% 40%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 330 80% 55%;
+    --accent: 24 95% 53%;
     --accent-foreground: 0 0% 100%;
 
-    --highlight: 25 90% 50%;
+    --highlight: 262 83% 58%;
     --highlight-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5% 85%;
-    --input: 240 5% 90%;
-    --ring: 270 80% 55%;
+    --border: 217 33% 25%;
+    --input: 217 33% 20%;
+    --ring: 217 91% 60%;
 
-    --glass: 0 0% 100% / 0.8;
-    --glass-border: 240 5% 80%;
+    --glass: 222 47% 14% / 0.8;
+    --glass-border: 217 33% 30%;
   }
 }
 
@@ -103,7 +102,6 @@
     @apply bg-background text-foreground font-body antialiased;
   }
 
-
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
   }
@@ -115,7 +113,7 @@
   }
 
   .gradient-bg {
-    @apply bg-gradient-to-r from-primary via-secondary to-accent;
+    @apply bg-gradient-to-r from-primary to-secondary;
   }
 
   .gradient-border {
@@ -133,19 +131,20 @@
   }
 
   .glass {
-    @apply backdrop-blur-xl bg-card/70 border border-glass-border;
+    @apply backdrop-blur-xl border border-glass-border shadow-lg;
+    background: hsl(var(--glass));
   }
 
   .glow {
-    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.5);
+    box-shadow: 0 10px 40px -10px hsl(var(--primary) / 0.4);
   }
 
   .glow-sm {
-    box-shadow: 0 0 20px -5px hsl(var(--primary) / 0.4);
+    box-shadow: 0 4px 20px -5px hsl(var(--primary) / 0.3);
   }
 
   .text-glow {
-    text-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+    text-shadow: 0 0 30px hsl(var(--primary) / 0.3);
   }
 
   .section-padding {
@@ -154,6 +153,24 @@
 
   .container-custom {
     @apply max-w-7xl mx-auto px-4 md:px-8;
+  }
+
+  /* Card with gradient top border */
+  .card-gradient-border {
+    @apply relative overflow-hidden rounded-2xl bg-card shadow-xl;
+  }
+
+  .card-gradient-border::before {
+    content: '';
+    @apply absolute top-0 left-0 right-0 h-1;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+  }
+
+  /* Popular badge styling */
+  .popular-badge {
+    @apply absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-sm font-semibold;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+    color: white;
   }
 }
 
@@ -177,22 +194,38 @@
 
   @keyframes pulse-glow {
     0%, 100% {
-      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
     }
     50% {
-      box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.4);
     }
   }
 
   .bg-grid {
     background-image: 
-      linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
+      linear-gradient(to right, hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.5) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
   .bg-noise {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.03;
+    opacity: 0.02;
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  @keyframes blob {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
   }
 }
