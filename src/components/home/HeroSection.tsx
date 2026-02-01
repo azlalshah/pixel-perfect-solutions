@@ -73,20 +73,20 @@ const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden section-padding pt-32"
     >
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-grid opacity-40" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+      <div className="absolute inset-0 bg-grid opacity-30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
 
       {/* Animated Blobs */}
-      <div className="hero-blob absolute top-20 left-10 w-72 h-72 bg-primary/30 rounded-full blur-3xl" />
-      <div className="hero-blob absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl" />
-      <div className="hero-blob absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl" />
+      <div className="hero-blob absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
+      <div className="hero-blob absolute bottom-20 right-10 w-96 h-96 bg-secondary/15 rounded-full blur-3xl" />
+      <div className="hero-blob absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           {/* Label */}
-          <div className="hero-label inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
+          <div className="hero-label inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-muted-foreground">
+            <span className="text-sm text-foreground/80">
               Transforming Ideas into Digital Reality
             </span>
           </div>
@@ -116,7 +116,7 @@ const HeroSection = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-border/50 hover:border-primary hover:text-primary transition-all text-lg px-8 py-6 group"
+              className="border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all text-lg px-8 py-6 group"
             >
               <Play className="mr-2 w-5 h-5 transition-transform group-hover:scale-110" />
               Watch Showreel

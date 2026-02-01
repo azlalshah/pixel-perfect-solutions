@@ -59,7 +59,7 @@ const Navigation = () => {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'glass py-3' : 'py-5 bg-transparent'
+          isScrolled ? 'bg-background/95 backdrop-blur-lg shadow-lg py-3' : 'py-5 bg-transparent'
         }`}
       >
         <div className="container-custom flex items-center justify-between">
@@ -103,7 +103,7 @@ const Navigation = () => {
                 {/* Submenu */}
                 {link.submenu && (
                   <div
-                    className={`absolute top-full left-0 mt-2 w-56 glass rounded-lg overflow-hidden transition-all duration-300 ${
+                    className={`absolute top-full left-0 mt-2 w-56 bg-card rounded-xl overflow-hidden transition-all duration-300 shadow-xl border border-border ${
                       servicesOpen
                         ? 'opacity-100 visible translate-y-0'
                         : 'opacity-0 invisible -translate-y-2'
@@ -137,7 +137,7 @@ const Navigation = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden relative z-[60] p-2 glass rounded-lg hover:bg-muted/50 transition-colors"
+            className="lg:hidden relative z-[60] p-2 bg-card rounded-lg hover:bg-muted transition-colors border border-border shadow-sm"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
@@ -158,7 +158,7 @@ const Navigation = () => {
       >
         {/* Close button inside mobile menu */}
         <button
-          className="absolute top-5 right-4 p-2 glass rounded-lg hover:bg-muted/50 transition-colors z-10"
+          className="absolute top-5 right-4 p-2 bg-card rounded-lg hover:bg-muted transition-colors z-10 border border-border"
           onClick={() => setIsOpen(false)}
           aria-label="Close menu"
         >
@@ -188,7 +188,7 @@ const Navigation = () => {
                       mobileServicesOpen ? 'max-h-80 mt-3' : 'max-h-0'
                     }`}
                   >
-                    <div className="flex flex-col gap-2 py-2 px-4 glass rounded-lg">
+                    <div className="flex flex-col gap-2 py-2 px-4 bg-card rounded-lg border border-border shadow-lg">
                       {link.submenu.map((sublink) => (
                         <Link
                           key={sublink.name}
