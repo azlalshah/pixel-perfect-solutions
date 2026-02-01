@@ -79,7 +79,7 @@ const PricingPackages = ({ serviceName, packages }: PricingPackagesProps) => {
             {packages.map((pkg, index) => (
               <div
                 key={pkg.name}
-                className={`relative rounded-2xl p-8 transition-all duration-300 ${
+                className={`relative rounded-2xl p-8 transition-all duration-300 overflow-visible ${
                   pkg.isPopular
                     ? 'bg-card shadow-2xl border-2 border-primary scale-105 z-10'
                     : 'bg-card shadow-lg border border-border hover:border-primary/50'
