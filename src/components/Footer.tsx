@@ -14,26 +14,33 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
-    services: [
+    development: [
       { name: 'Web Development', path: '/services/web-development' },
-      { name: 'UI/UX Design', path: '/services/ui-ux-design' },
-      { name: 'Digital Marketing', path: '/services/digital-marketing' },
       { name: 'Mobile Development', path: '/services/mobile-development' },
+      { name: 'Backend Development', path: '/services/backend-development' },
       { name: 'Cloud & DevOps', path: '/services/cloud-devops' },
+    ],
+    design: [
+      { name: 'UI/UX Design', path: '/services/ui-ux-design' },
+      { name: 'Logo Design', path: '/services/logo-design' },
+      { name: 'Branding', path: '/services/branding' },
+      { name: 'Video Animation', path: '/services/video-animation' },
+    ],
+    platforms: [
+      { name: 'WordPress', path: '/services/wordpress' },
+      { name: 'Shopify', path: '/services/shopify' },
+      { name: 'Wix', path: '/services/wix' },
+      { name: 'Webflow', path: '/services/webflow' },
+      { name: 'Squarespace', path: '/services/squarespace' },
+      { name: 'Premade Templates', path: '/services/premade-templates' },
     ],
     company: [
       { name: 'About Us', path: '/about' },
       { name: 'Our Team', path: '/team' },
-      { name: 'Careers', path: '/careers' },
-      { name: 'Testimonials', path: '/testimonials' },
-      { name: 'FAQ', path: '/faq' },
-    ],
-    resources: [
       { name: 'Portfolio', path: '/portfolio' },
-      { name: 'Blog', path: '/blog' },
+      { name: 'Careers', path: '/careers' },
       { name: 'Contact', path: '/contact' },
-      { name: 'Privacy Policy', path: '/privacy-policy' },
-      { name: 'Terms of Service', path: '/terms-of-service' },
+      { name: 'Digital Marketing', path: '/services/digital-marketing' },
     ],
   };
 
@@ -48,7 +55,7 @@ const Footer = () => {
   return (
     <footer className="bg-muted/50 border-t border-border">
       <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-6">
@@ -84,15 +91,49 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Development */}
           <div>
-            <h4 className="font-heading font-semibold mb-4">Services</h4>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
+            <h4 className="font-heading font-semibold mb-4 text-sm">Development</h4>
+            <ul className="space-y-2">
+              {footerLinks.development.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Design */}
+          <div>
+            <h4 className="font-heading font-semibold mb-4 text-sm">Design</h4>
+            <ul className="space-y-2">
+              {footerLinks.design.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Platforms */}
+          <div>
+            <h4 className="font-heading font-semibold mb-4 text-sm">Platforms</h4>
+            <ul className="space-y-2">
+              {footerLinks.platforms.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -103,30 +144,13 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="font-heading font-semibold mb-4">Company</h4>
-            <ul className="space-y-3">
+            <h4 className="font-heading font-semibold mb-4 text-sm">Company</h4>
+            <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="font-heading font-semibold mb-4">Resources</h4>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
                   </Link>
