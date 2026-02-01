@@ -186,71 +186,8 @@ const ServicesShowcase = () => {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {/* Services List */}
-            <div className="lg:col-span-2">
-              <div className="showcase-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {services.map((service, index) => {
-                  const Icon = service.icon;
-                  const isActive = activeService === index;
-                  
-                  return (
-                    <div
-                      key={index}
-                      className={`showcase-card group relative p-6 rounded-2xl border transition-all duration-500 cursor-pointer ${
-                        isActive
-                          ? 'bg-card border-primary shadow-xl scale-[1.02]'
-                          : 'bg-card/50 border-border hover:border-primary/50 hover:bg-card'
-                      }`}
-                      onMouseEnter={() => setActiveService(index)}
-                    >
-                      {/* Active Indicator */}
-                      {isActive && (
-                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full animate-pulse" />
-                      )}
-
-                      {/* Gradient Top Border */}
-                      <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-gradient-to-r ${service.color} transition-opacity ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-50'}`} />
-
-                      {/* Icon */}
-                      <div className={`w-12 h-12 rounded-xl ${service.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                        <Icon className={`w-6 h-6 ${service.iconColor}`} />
-                      </div>
-
-                      {/* Content */}
-                      <h3 className="text-lg font-heading font-semibold mb-2 group-hover:text-primary transition-colors">
-                        {service.title}
-                      </h3>
-                      
-                      <div className="flex items-baseline gap-2 mb-3">
-                        <span className="text-2xl font-bold text-foreground">{service.startingPrice}</span>
-                        <span className="text-xs text-muted-foreground">starting</span>
-                      </div>
-
-                      {/* Quick Features */}
-                      <div className="space-y-1.5">
-                        {service.features.map((feature, i) => (
-                          <div key={i} className="flex items-center gap-2 text-xs text-muted-foreground">
-                            <Check className="w-3 h-3 text-secondary" />
-                            {feature}
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Link Arrow */}
-                      <Link
-                        to={service.path}
-                        className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-primary hover:text-white"
-                      >
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Featured Package Preview */}
-            <div className="featured-preview">
+            {/* Featured Package Preview - First on mobile/tablet */}
+            <div className="featured-preview order-first lg:order-last">
               <div className="sticky top-32">
                 <div className="relative bg-card rounded-3xl border-2 border-primary shadow-2xl overflow-visible">
                   {/* Popular Badge */}
@@ -332,6 +269,69 @@ const ServicesShowcase = () => {
                     ))}
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Services List */}
+            <div className="lg:col-span-2 order-last lg:order-first">
+              <div className="showcase-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {services.map((service, index) => {
+                  const Icon = service.icon;
+                  const isActive = activeService === index;
+                  
+                  return (
+                    <div
+                      key={index}
+                      className={`showcase-card group relative p-6 rounded-2xl border transition-all duration-500 cursor-pointer ${
+                        isActive
+                          ? 'bg-card border-primary shadow-xl scale-[1.02]'
+                          : 'bg-card/50 border-border hover:border-primary/50 hover:bg-card'
+                      }`}
+                      onMouseEnter={() => setActiveService(index)}
+                    >
+                      {/* Active Indicator */}
+                      {isActive && (
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full animate-pulse" />
+                      )}
+
+                      {/* Gradient Top Border */}
+                      <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-gradient-to-r ${service.color} transition-opacity ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-50'}`} />
+
+                      {/* Icon */}
+                      <div className={`w-12 h-12 rounded-xl ${service.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                        <Icon className={`w-6 h-6 ${service.iconColor}`} />
+                      </div>
+
+                      {/* Content */}
+                      <h3 className="text-lg font-heading font-semibold mb-2 group-hover:text-primary transition-colors">
+                        {service.title}
+                      </h3>
+                      
+                      <div className="flex items-baseline gap-2 mb-3">
+                        <span className="text-2xl font-bold text-foreground">{service.startingPrice}</span>
+                        <span className="text-xs text-muted-foreground">starting</span>
+                      </div>
+
+                      {/* Quick Features */}
+                      <div className="space-y-1.5">
+                        {service.features.map((feature, i) => (
+                          <div key={i} className="flex items-center gap-2 text-xs text-muted-foreground">
+                            <Check className="w-3 h-3 text-secondary" />
+                            {feature}
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Link Arrow */}
+                      <Link
+                        to={service.path}
+                        className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-primary hover:text-white"
+                      >
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
