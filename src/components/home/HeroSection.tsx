@@ -189,20 +189,20 @@ const HeroSection = () => {
         </div>
 
         {/* Bottom Stats Row */}
-        <div className="hero-stats flex flex-wrap justify-center lg:justify-start gap-8 md:gap-12 mt-16 pt-8 border-t border-border/50">
-          <div className="text-center">
+        <div className="hero-stats flex flex-wrap justify-start gap-6 md:gap-10 mt-16 pt-8 border-t border-border/50 lg:max-w-xl">
+          <div className="text-left">
             <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">8+</div>
             <div className="text-sm text-muted-foreground mt-1">Years Experience</div>
           </div>
-          <div className="text-center">
+          <div className="text-left">
             <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">24/7</div>
             <div className="text-sm text-muted-foreground mt-1">Support Available</div>
           </div>
-          <div className="text-center">
+          <div className="text-left">
             <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">99%</div>
             <div className="text-sm text-muted-foreground mt-1">Client Satisfaction</div>
           </div>
-          <div className="text-center">
+          <div className="text-left">
             <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">15+</div>
             <div className="text-sm text-muted-foreground mt-1">Team Experts</div>
           </div>
