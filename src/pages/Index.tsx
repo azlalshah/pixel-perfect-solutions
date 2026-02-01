@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import HeroSection from '@/components/home/HeroSection';
 import ServicesShowcase from '@/components/home/ServicesShowcase';
 import StatsSection from '@/components/home/StatsSection';
+import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import CTASection from '@/components/home/CTASection';
 import gsap from 'gsap';
@@ -32,6 +33,7 @@ const Index = () => {
       <HeroSection />
       <ServicesShowcase />
       <StatsSection />
+      <WhyChooseUsSection />
       <TestimonialsSection />
       <CTASection />
       <Footer />
