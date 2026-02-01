@@ -189,50 +189,50 @@ const HeroSection = () => {
         </div>
 
         {/* Bottom Stats Row */}
-        <div className="hero-stats flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16 mt-20 pt-10 border-t border-border/50">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-              <Clock className="w-6 h-6 text-primary" />
+        <div className="hero-stats grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8 mt-12 md:mt-20 pt-8 md:pt-10 border-t border-border/50">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
             </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">8+</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
-              <Headphones className="w-6 h-6 text-secondary" />
-            </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">24/7</div>
-              <div className="text-sm text-muted-foreground">Support Available</div>
+            <div className="min-w-0">
+              <div className="text-xl sm:text-2xl md:text-3xl font-heading font-bold gradient-text">8+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground truncate">Years Experience</div>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-              <ThumbsUp className="w-6 h-6 text-accent" />
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
+              <Headphones className="w-5 h-5 sm:w-6 sm:h-6 text-secondary" />
             </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">99%</div>
-              <div className="text-sm text-muted-foreground">Client Satisfaction</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center">
-              <Users className="w-6 h-6 text-highlight" />
-            </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">15+</div>
-              <div className="text-sm text-muted-foreground">Team Experts</div>
+            <div className="min-w-0">
+              <div className="text-xl sm:text-2xl md:text-3xl font-heading font-bold gradient-text">24/7</div>
+              <div className="text-xs sm:text-sm text-muted-foreground truncate">Support Available</div>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-              <Award className="w-6 h-6 text-primary" />
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+              <ThumbsUp className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
             </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">50+</div>
-              <div className="text-sm text-muted-foreground">Awards Won</div>
+            <div className="min-w-0">
+              <div className="text-xl sm:text-2xl md:text-3xl font-heading font-bold gradient-text">99%</div>
+              <div className="text-xs sm:text-sm text-muted-foreground truncate">Client Satisfaction</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-highlight/10 flex items-center justify-center flex-shrink-0">
+              <Users className="w-5 h-5 sm:w-6 sm:h-6 text-highlight" />
+            </div>
+            <div className="min-w-0">
+              <div className="text-xl sm:text-2xl md:text-3xl font-heading font-bold gradient-text">15+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground truncate">Team Experts</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4 col-span-2 sm:col-span-1 justify-center sm:justify-start">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <Award className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+            </div>
+            <div className="min-w-0">
+              <div className="text-xl sm:text-2xl md:text-3xl font-heading font-bold gradient-text">50+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground truncate">Awards Won</div>
             </div>
           </div>
         </div>
