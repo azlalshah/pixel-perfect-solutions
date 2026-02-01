@@ -177,7 +177,7 @@ const HeroSection = () => {
               
               {/* Floating Badge */}
               <div className="absolute -top-4 -right-4 glass rounded-xl p-4 shadow-xl animate-float" style={{ animationDelay: '1s' }}>
-                <div className="text-2xl font-heading font-bold gradient-text">50+</div>
+                <div className="text-2xl font-heading font-bold gradient-text">500+</div>
                 <div className="text-sm text-muted-foreground">Happy Clients</div>
               </div>
             </div>
