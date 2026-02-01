@@ -312,7 +312,7 @@ const ServicesShowcase = () => {
                         Get Quote
                       </Button>
                       <Link to={activeServiceData.path} className="block">
-                        <Button variant="outline" className="w-full border-primary/50 hover:bg-primary/10" size="lg">
+                        <Button variant="outline" className="w-full" size="lg">
                           View All Packages
                         </Button>
                       </Link>
