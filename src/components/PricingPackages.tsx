@@ -61,7 +61,7 @@ const PricingPackages = ({ serviceName, packages }: PricingPackagesProps) => {
 
   return (
     <>
-      <section className="py-20">
+      <section className="py-20 overflow-visible">
         <div className="container-custom">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
@@ -87,7 +87,7 @@ const PricingPackages = ({ serviceName, packages }: PricingPackagesProps) => {
               >
                 {/* Popular Badge */}
                 {pkg.isPopular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full gradient-bg text-white text-sm font-semibold flex items-center gap-1.5 shadow-lg">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full gradient-bg text-white text-sm font-semibold flex items-center gap-1.5 shadow-lg z-20">
                     <Star className="w-4 h-4 fill-current" />
                     Most Popular
                   </div>
