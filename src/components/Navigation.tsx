@@ -46,8 +46,18 @@ const Navigation = () => {
         { name: 'Web Development', path: '/services/web-development' },
         { name: 'UI/UX Design', path: '/services/ui-ux-design' },
         { name: 'Digital Marketing', path: '/services/digital-marketing' },
-        { name: 'Mobile App Development', path: '/services/mobile-development' },
+        { name: 'Mobile Development', path: '/services/mobile-development' },
         { name: 'Cloud & DevOps', path: '/services/cloud-devops' },
+        { name: 'Video Animation', path: '/services/video-animation' },
+        { name: 'Logo Design', path: '/services/logo-design' },
+        { name: 'Branding', path: '/services/branding' },
+        { name: 'Backend Development', path: '/services/backend-development' },
+        { name: 'WordPress', path: '/services/wordpress' },
+        { name: 'Shopify', path: '/services/shopify' },
+        { name: 'Wix', path: '/services/wix' },
+        { name: 'Webflow', path: '/services/webflow' },
+        { name: 'Squarespace', path: '/services/squarespace' },
+        { name: 'Premade Templates', path: '/services/premade-templates' },
       ],
     },
     { name: 'Portfolio', path: '/portfolio' },
@@ -100,10 +110,10 @@ const Navigation = () => {
                   </Link>
                 )}
 
-                {/* Submenu */}
+                {/* Submenu - Mega Menu Style */}
                 {link.submenu && (
                   <div
-                    className={`absolute top-full left-0 mt-2 w-56 bg-card rounded-xl overflow-hidden transition-all duration-300 shadow-xl border border-border ${
+                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-card rounded-xl overflow-hidden transition-all duration-300 shadow-xl border border-border p-4 ${
                       servicesOpen
                         ? 'opacity-100 visible translate-y-0'
                         : 'opacity-0 invisible -translate-y-2'
@@ -111,15 +121,25 @@ const Navigation = () => {
                     onMouseEnter={() => setServicesOpen(true)}
                     onMouseLeave={() => setServicesOpen(false)}
                   >
-                    {link.submenu.map((sublink) => (
+                    <div className="grid grid-cols-3 gap-1">
+                      {link.submenu.map((sublink) => (
+                        <Link
+                          key={sublink.name}
+                          to={sublink.path}
+                          className="block px-3 py-2 text-sm text-foreground/80 hover:text-primary hover:bg-muted rounded-lg transition-colors"
+                        >
+                          {sublink.name}
+                        </Link>
+                      ))}
+                    </div>
+                    <div className="mt-3 pt-3 border-t border-border">
                       <Link
-                        key={sublink.name}
-                        to={sublink.path}
-                        className="block px-4 py-3 text-sm text-foreground/80 hover:text-primary hover:bg-muted transition-colors"
+                        to="/services"
+                        className="block text-center text-sm text-primary hover:underline"
                       >
-                        {sublink.name}
+                        View All Services →
                       </Link>
-                    ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -198,7 +218,7 @@ const Navigation = () => {
                     {/* Mobile Submenu */}
                     <div
                       className={`overflow-hidden transition-all duration-300 ${
-                        mobileServicesOpen ? 'max-h-80' : 'max-h-0'
+                        mobileServicesOpen ? 'max-h-[500px]' : 'max-h-0'
                       }`}
                     >
                       <div className="flex flex-col gap-1 pl-4 py-1">
