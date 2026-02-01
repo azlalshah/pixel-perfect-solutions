@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, CheckCircle, Clock, Headphones, ThumbsUp, Users, Award, Globe } from 'lucide-react';
 import gsap from 'gsap';
-import heroImage from '@/assets/hero-image.png';
+import heroImage from '@/assets/hero-illustration.png';
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
