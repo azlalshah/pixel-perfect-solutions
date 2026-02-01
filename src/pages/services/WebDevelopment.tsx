@@ -184,7 +184,8 @@ const WebDevelopment = () => {
               return (
                 <div 
                   key={i} 
-                  className={`${tech.bgColor} px-6 py-4 rounded-xl border border-border text-center hover:border-primary/50 hover:shadow-lg transition-all hover:-translate-y-1 hover:scale-105 group`}
+                  className={`${tech.bgColor} px-6 py-4 rounded-xl border border-border text-center hover:border-primary/50 hover:shadow-lg transition-all hover:-translate-y-1 hover:scale-105 group animate-float`}
+                  style={{ animationDelay: `${i * 0.3}s` }}
                 >
                   <div className={`w-12 h-12 mx-auto mb-2 rounded-lg ${tech.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform`}>
                     <Icon className={`w-6 h-6 ${tech.color}`} />
