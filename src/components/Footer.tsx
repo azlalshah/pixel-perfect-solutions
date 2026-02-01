@@ -25,6 +25,7 @@ const Footer = () => {
       { name: 'Logo Design', path: '/services/logo-design' },
       { name: 'Branding', path: '/services/branding' },
       { name: 'Video Animation', path: '/services/video-animation' },
+      { name: 'Ebook Design', path: '/services/ebook-design' },
     ],
     platforms: [
       { name: 'WordPress', path: '/services/wordpress' },
