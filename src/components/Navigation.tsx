@@ -150,72 +150,88 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* Mobile Navigation - Outside nav for full screen coverage */}
+      {/* Backdrop overlay */}
       <div
-        className={`fixed inset-0 z-[55] bg-background lg:hidden transition-all duration-500 ${
+        className={`fixed inset-0 z-[54] bg-background/60 backdrop-blur-sm lg:hidden transition-opacity duration-300 ${
           isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
+        onClick={() => setIsOpen(false)}
+      />
+
+      {/* Off-Canvas Mobile Navigation - Slides from right, half width */}
+      <div
+        className={`fixed top-0 right-0 bottom-0 z-[55] w-1/2 min-w-[280px] max-w-[400px] bg-background border-l border-border shadow-2xl lg:hidden transition-transform duration-300 ease-out ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
       >
-        {/* Close button inside mobile menu */}
-        <button
-          className="absolute top-5 right-4 p-2 bg-card rounded-lg hover:bg-muted transition-colors z-10 border border-border"
-          onClick={() => setIsOpen(false)}
-          aria-label="Close menu"
-        >
-          <X className="w-6 h-6 text-foreground" />
-        </button>
+        {/* Header with close button */}
+        <div className="flex items-center justify-between p-4 border-b border-border">
+          <span className="text-lg font-heading font-bold gradient-text">Menu</span>
+          <button
+            className="p-2 bg-card rounded-lg hover:bg-muted transition-colors border border-border"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
+          >
+            <X className="w-5 h-5 text-foreground" />
+          </button>
+        </div>
         
-        <div className="flex flex-col items-center justify-center h-full gap-4 px-6">
-          {navLinks.map((link) => (
-            <div key={link.name} className="mobile-nav-item w-full max-w-xs text-center">
-              {link.submenu ? (
-                <div className="flex flex-col items-center">
-                  <button
-                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                    className="flex items-center justify-center gap-2 text-2xl font-heading font-semibold text-foreground hover:text-primary transition-colors w-full"
-                  >
-                    {link.name}
-                    <ChevronDown 
-                      className={`w-5 h-5 transition-transform duration-300 ${
-                        mobileServicesOpen ? 'rotate-180' : ''
-                      }`} 
-                    />
-                  </button>
-                  
-                  {/* Mobile Submenu */}
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      mobileServicesOpen ? 'max-h-80 mt-3' : 'max-h-0'
-                    }`}
-                  >
-                    <div className="flex flex-col gap-2 py-2 px-4 bg-card rounded-lg border border-border shadow-lg">
-                      {link.submenu.map((sublink) => (
-                        <Link
-                          key={sublink.name}
-                          to={sublink.path}
-                          onClick={() => setIsOpen(false)}
-                          className="text-base text-foreground/80 hover:text-primary transition-colors py-2"
-                        >
-                          {sublink.name}
-                        </Link>
-                      ))}
+        {/* Scrollable menu content */}
+        <div className="flex flex-col h-[calc(100%-80px)] overflow-y-auto py-4 px-4">
+          <div className="flex flex-col gap-1">
+            {navLinks.map((link) => (
+              <div key={link.name} className="mobile-nav-item">
+                {link.submenu ? (
+                  <div className="flex flex-col">
+                    <button
+                      onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                      className="flex items-center justify-between gap-2 text-base font-medium text-foreground hover:text-primary hover:bg-muted/50 transition-colors w-full py-3 px-3 rounded-lg"
+                    >
+                      {link.name}
+                      <ChevronDown 
+                        className={`w-4 h-4 transition-transform duration-300 ${
+                          mobileServicesOpen ? 'rotate-180' : ''
+                        }`} 
+                      />
+                    </button>
+                    
+                    {/* Mobile Submenu */}
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${
+                        mobileServicesOpen ? 'max-h-80' : 'max-h-0'
+                      }`}
+                    >
+                      <div className="flex flex-col gap-1 pl-4 py-1">
+                        {link.submenu.map((sublink) => (
+                          <Link
+                            key={sublink.name}
+                            to={sublink.path}
+                            onClick={() => setIsOpen(false)}
+                            className="text-sm text-foreground/70 hover:text-primary hover:bg-muted/50 transition-colors py-2.5 px-3 rounded-lg"
+                          >
+                            {sublink.name}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ) : (
-                <Link
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className="text-2xl font-heading font-semibold text-foreground hover:text-primary transition-colors block"
-                >
-                  {link.name}
-                </Link>
-              )}
-            </div>
-          ))}
-          <div className="mobile-nav-item mt-4">
-            <Link to="/contact" onClick={() => setIsOpen(false)}>
-              <Button className="gradient-bg hover:opacity-90 transition-opacity text-lg px-8 py-6">
+                ) : (
+                  <Link
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className="text-base font-medium text-foreground hover:text-primary hover:bg-muted/50 transition-colors block py-3 px-3 rounded-lg"
+                  >
+                    {link.name}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+          
+          {/* CTA Button at bottom */}
+          <div className="mt-auto pt-4 border-t border-border">
+            <Link to="/contact" onClick={() => setIsOpen(false)} className="block">
+              <Button className="gradient-bg hover:opacity-90 transition-opacity w-full py-5">
                 Get Started
               </Button>
             </Link>
