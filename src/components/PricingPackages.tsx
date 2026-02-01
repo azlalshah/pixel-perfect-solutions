@@ -75,7 +75,7 @@ const PricingPackages = ({ serviceName, packages }: PricingPackagesProps) => {
             </p>
           </div>
 
-          <div ref={cardsRef} className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div ref={cardsRef} className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto pt-6">
             {packages.map((pkg, index) => (
               <div
                 key={pkg.name}
