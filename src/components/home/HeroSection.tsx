@@ -171,7 +171,7 @@ const HeroSection = () => {
               
               {/* Floating Stats Card */}
               <div className="absolute -bottom-6 -left-6 glass rounded-xl p-4 shadow-xl animate-float">
-                <div className="text-2xl font-heading font-bold gradient-text">150+</div>
+                <div className="text-2xl font-heading font-bold gradient-text">500+</div>
                 <div className="text-sm text-muted-foreground">Projects Delivered</div>
               </div>
               
