@@ -30,6 +30,7 @@ import Wix from "./pages/services/Wix";
 import Webflow from "./pages/services/Webflow";
 import Squarespace from "./pages/services/Squarespace";
 import PremadeTemplates from "./pages/services/PremadeTemplates";
+import EbookDesign from "./pages/services/EbookDesign";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -60,6 +61,7 @@ const App = () => (
           <Route path="/services/webflow" element={<Webflow />} />
           <Route path="/services/squarespace" element={<Squarespace />} />
           <Route path="/services/premade-templates" element={<PremadeTemplates />} />
+          <Route path="/services/ebook-design" element={<EbookDesign />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
