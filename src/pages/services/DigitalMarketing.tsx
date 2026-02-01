@@ -108,7 +108,7 @@ const DigitalMarketing = () => {
                   </Button>
                 </Link>
                 <Link to="/portfolio">
-                  <Button size="lg" variant="outline" className="border-primary/50 hover:bg-primary/10">
+                  <Button size="lg" variant="outline">
                     See Results
                   </Button>
                 </Link>

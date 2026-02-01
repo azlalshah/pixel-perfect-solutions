@@ -130,7 +130,7 @@ const PricingPackages = ({ serviceName, packages }: PricingPackagesProps) => {
                   className={`w-full ${
                     pkg.isPopular
                       ? 'gradient-bg glow hover:opacity-90'
-                      : 'bg-primary/10 text-primary hover:bg-primary hover:text-white'
+                      : 'bg-primary/20 border-2 border-primary/70 text-foreground hover:bg-primary hover:text-white'
                   }`}
                   size="lg"
                 >
