@@ -252,17 +252,17 @@ const ServicesShowcase = () => {
             {/* Featured Package Preview */}
             <div className="featured-preview">
               <div className="sticky top-32">
-                <div className="relative bg-card rounded-3xl border-2 border-primary shadow-2xl overflow-hidden">
+                <div className="relative bg-card rounded-3xl border-2 border-primary shadow-2xl overflow-visible">
                   {/* Popular Badge */}
-                  <div className="absolute -top-0 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-b-xl gradient-bg text-white text-sm font-semibold flex items-center gap-1.5 shadow-lg">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 px-4 py-1.5 rounded-full gradient-bg text-white text-sm font-semibold flex items-center gap-1.5 shadow-lg whitespace-nowrap">
                     <Star className="w-4 h-4 fill-current" />
                     Popular Choice
                   </div>
 
                   {/* Gradient Background */}
-                  <div className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-br ${activeServiceData.color} opacity-10`} />
+                  <div className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-br ${activeServiceData.color} opacity-10 rounded-t-3xl`} />
 
-                  <div className="relative p-8 pt-12">
+                  <div className="relative p-6 pt-10 md:p-8 md:pt-12">
                     {/* Service Info */}
                     <div className="flex items-center gap-3 mb-4">
                       <div className={`w-10 h-10 rounded-lg ${activeServiceData.bgColor} flex items-center justify-center`}>
