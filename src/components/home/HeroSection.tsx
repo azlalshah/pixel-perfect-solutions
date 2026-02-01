@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, CheckCircle } from 'lucide-react';
 import gsap from 'gsap';
+import heroImage from '@/assets/hero-image.png';
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -25,7 +26,7 @@ const HeroSection = () => {
         },
       });
 
-      // Main title animation
+      // Main content animations
       tl.fromTo(
         '.hero-label',
         { opacity: 0, y: 20 },
@@ -51,10 +52,22 @@ const HeroSection = () => {
           '-=0.4'
         )
         .fromTo(
+          '.hero-features > div',
+          { opacity: 0, x: -20 },
+          { opacity: 1, x: 0, duration: 0.4, stagger: 0.1, ease: 'power3.out' },
+          '-=0.3'
+        )
+        .fromTo(
           '.hero-buttons',
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
           '-=0.3'
+        )
+        .fromTo(
+          '.hero-image',
+          { opacity: 0, scale: 0.9, x: 50 },
+          { opacity: 1, scale: 1, x: 0, duration: 0.8, ease: 'power3.out' },
+          '-=0.6'
         )
         .fromTo(
           '.hero-stats > div',
@@ -67,10 +80,16 @@ const HeroSection = () => {
     return () => ctx.revert();
   }, []);
 
+  const features = [
+    "Custom Web & Mobile Apps",
+    "Cloud & DevOps Solutions", 
+    "24/7 Dedicated Support"
+  ];
+
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden section-padding pt-32"
+      className="relative min-h-screen flex items-center overflow-hidden section-padding pt-24 lg:pt-32"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-grid opacity-30" />
@@ -82,87 +101,116 @@ const HeroSection = () => {
       <div className="hero-blob absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Label */}
-          <div className="hero-label inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-foreground/80">
-              Transforming Ideas into Digital Reality
-            </span>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Column - Text Content */}
+          <div className="text-center lg:text-left">
+            {/* Label */}
+            <div className="hero-label inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-sm text-foreground/80">
+                Transforming Ideas into Digital Reality
+              </span>
+            </div>
+
+            {/* Main Title */}
+            <h1 ref={titleRef} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+              <span className="hero-title-line block">We Build</span>
+              <span className="hero-title-line block gradient-text">Exceptional Digital</span>
+              <span className="hero-title-line block">Experiences</span>
+            </h1>
+
+            {/* Description */}
+            <p className="hero-description text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-6">
+              From stunning websites to powerful mobile apps, we deliver cutting-edge
+              IT solutions that drive growth and transform businesses.
+            </p>
+
+            {/* Feature List */}
+            <div className="hero-features flex flex-col gap-3 mb-8">
+              {features.map((feature, i) => (
+                <div key={i} className="flex items-center gap-3 justify-center lg:justify-start">
+                  <CheckCircle className="w-5 h-5 text-secondary" />
+                  <span className="text-foreground/80">{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="hero-buttons flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 mb-8 lg:mb-0">
+              <Button
+                size="lg"
+                className="gradient-bg hover:opacity-90 transition-all group text-lg px-8 py-6 glow"
+              >
+                Start Your Project
+                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all text-lg px-8 py-6 group"
+              >
+                <Play className="mr-2 w-5 h-5 transition-transform group-hover:scale-110" />
+                Watch Showreel
+              </Button>
+            </div>
           </div>
 
-          {/* Main Title */}
-          <h1 ref={titleRef} className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
-            <span className="hero-title-line block">We Build</span>
-            <span className="hero-title-line block gradient-text">Exceptional Digital</span>
-            <span className="hero-title-line block">Experiences</span>
-          </h1>
+          {/* Right Column - Image */}
+          <div className="hero-image relative">
+            {/* Main Image Container */}
+            <div className="relative z-10">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl glow">
+                <img 
+                  src={heroImage} 
+                  alt="Digital solutions team collaborating" 
+                  className="w-full h-auto object-cover"
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+              </div>
+              
+              {/* Floating Stats Card */}
+              <div className="absolute -bottom-6 -left-6 glass rounded-xl p-4 shadow-xl animate-float">
+                <div className="text-2xl font-heading font-bold gradient-text">150+</div>
+                <div className="text-sm text-muted-foreground">Projects Delivered</div>
+              </div>
+              
+              {/* Floating Badge */}
+              <div className="absolute -top-4 -right-4 glass rounded-xl p-4 shadow-xl animate-float" style={{ animationDelay: '1s' }}>
+                <div className="text-2xl font-heading font-bold gradient-text">50+</div>
+                <div className="text-sm text-muted-foreground">Happy Clients</div>
+              </div>
+            </div>
 
-          {/* Description */}
-          <p className="hero-description text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            From stunning websites to powerful mobile apps, we deliver cutting-edge
-            IT solutions that drive growth and transform businesses.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="hero-buttons flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Button
-              size="lg"
-              className="gradient-bg hover:opacity-90 transition-all group text-lg px-8 py-6 glow"
-            >
-              Start Your Project
-              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all text-lg px-8 py-6 group"
-            >
-              <Play className="mr-2 w-5 h-5 transition-transform group-hover:scale-110" />
-              Watch Showreel
-            </Button>
+            {/* Decorative Elements */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-primary/20 rounded-full -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] border border-secondary/10 rounded-full -z-10" />
           </div>
+        </div>
 
-          {/* Stats */}
-          <div className="hero-stats flex flex-wrap justify-center gap-8 md:gap-16">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-heading font-bold gradient-text">
-                150+
-              </div>
-              <div className="text-sm text-muted-foreground mt-1">
-                Projects Delivered
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-heading font-bold gradient-text">
-                50+
-              </div>
-              <div className="text-sm text-muted-foreground mt-1">
-                Happy Clients
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-heading font-bold gradient-text">
-                8+
-              </div>
-              <div className="text-sm text-muted-foreground mt-1">
-                Years Experience
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-heading font-bold gradient-text">
-                24/7
-              </div>
-              <div className="text-sm text-muted-foreground mt-1">
-                Support Available
-              </div>
-            </div>
+        {/* Bottom Stats Row */}
+        <div className="hero-stats flex flex-wrap justify-center lg:justify-start gap-8 md:gap-12 mt-16 pt-8 border-t border-border/50">
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">8+</div>
+            <div className="text-sm text-muted-foreground mt-1">Years Experience</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">24/7</div>
+            <div className="text-sm text-muted-foreground mt-1">Support Available</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">99%</div>
+            <div className="text-sm text-muted-foreground mt-1">Client Satisfaction</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-heading font-bold gradient-text">15+</div>
+            <div className="text-sm text-muted-foreground mt-1">Team Experts</div>
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden lg:block">
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center">
           <div className="w-1.5 h-3 bg-primary rounded-full mt-2 animate-pulse" />
         </div>
