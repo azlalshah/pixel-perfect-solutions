@@ -9,6 +9,7 @@ import {
   ArrowRight,
   Star,
   Check,
+  BookOpen,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import gsap from 'gsap';
@@ -82,6 +83,19 @@ const services = [
     popularPackage: 'Professional',
     popularPrice: '$1,999/mo',
     features: ['AWS & Azure', 'CI/CD Pipelines', 'Kubernetes'],
+  },
+  {
+    icon: BookOpen,
+    title: 'Ebook Design',
+    description: 'Professional ebook design and formatting for all platforms.',
+    path: '/services/ebook-design',
+    color: 'from-amber-500 to-yellow-400',
+    bgColor: 'bg-amber-500/10',
+    iconColor: 'text-amber-500',
+    startingPrice: '$299',
+    popularPackage: 'Professional',
+    popularPrice: '$799',
+    features: ['Custom Layout', 'Multi-format', 'Cover Design'],
   },
 ];
 
