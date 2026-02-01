@@ -2,7 +2,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Check, Code, Database, Globe, Zap, Shield, Rocket } from 'lucide-react';
+import { Check, Code, Database, Globe, Zap, Shield, Rocket, Atom, Triangle, Server, FileCode, Leaf, Palette, Share2, type LucideIcon } from 'lucide-react';
 import PricingPackages, { PricingPackage } from '@/components/PricingPackages';
 import FloatingElements from '@/components/FloatingElements';
 
@@ -16,15 +16,15 @@ const WebDevelopment = () => {
     { icon: Rocket, title: 'Performance Optimization', description: 'Lightning-fast load times' },
   ];
 
-  const technologies = [
-    { name: 'React', icon: '⚛️' },
-    { name: 'Next.js', icon: '▲' },
-    { name: 'Node.js', icon: '🟢' },
-    { name: 'TypeScript', icon: '📘' },
-    { name: 'PostgreSQL', icon: '🐘' },
-    { name: 'MongoDB', icon: '🍃' },
-    { name: 'Tailwind CSS', icon: '🎨' },
-    { name: 'GraphQL', icon: '◈' },
+  const technologies: { name: string; icon: LucideIcon; color: string; bgColor: string }[] = [
+    { name: 'React', icon: Atom, color: 'text-cyan-500', bgColor: 'bg-cyan-500/10' },
+    { name: 'Next.js', icon: Triangle, color: 'text-foreground', bgColor: 'bg-foreground/10' },
+    { name: 'Node.js', icon: Server, color: 'text-green-500', bgColor: 'bg-green-500/10' },
+    { name: 'TypeScript', icon: FileCode, color: 'text-blue-500', bgColor: 'bg-blue-500/10' },
+    { name: 'PostgreSQL', icon: Database, color: 'text-blue-600', bgColor: 'bg-blue-600/10' },
+    { name: 'MongoDB', icon: Leaf, color: 'text-green-600', bgColor: 'bg-green-600/10' },
+    { name: 'Tailwind CSS', icon: Palette, color: 'text-teal-500', bgColor: 'bg-teal-500/10' },
+    { name: 'GraphQL', icon: Share2, color: 'text-pink-500', bgColor: 'bg-pink-500/10' },
   ];
 
   const packages: PricingPackage[] = [
@@ -179,15 +179,20 @@ const WebDevelopment = () => {
           </div>
           
           <div className="flex flex-wrap justify-center gap-4">
-            {technologies.map((tech, i) => (
-              <div 
-                key={i} 
-                className="bg-card px-6 py-4 rounded-xl border border-border text-center hover:border-primary/50 hover:shadow-lg transition-all hover:-translate-y-1"
-              >
-                <span className="text-3xl mb-2 block">{tech.icon}</span>
-                <span className="font-medium text-sm">{tech.name}</span>
-              </div>
-            ))}
+            {technologies.map((tech, i) => {
+              const Icon = tech.icon;
+              return (
+                <div 
+                  key={i} 
+                  className={`${tech.bgColor} px-6 py-4 rounded-xl border border-border text-center hover:border-primary/50 hover:shadow-lg transition-all hover:-translate-y-1 hover:scale-105 group`}
+                >
+                  <div className={`w-12 h-12 mx-auto mb-2 rounded-lg ${tech.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                    <Icon className={`w-6 h-6 ${tech.color}`} />
+                  </div>
+                  <span className="font-medium text-sm">{tech.name}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
