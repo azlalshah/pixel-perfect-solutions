@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/home/HeroSection';
-import ServicesSection from '@/components/home/ServicesSection';
+import ServicesShowcase from '@/components/home/ServicesShowcase';
 import StatsSection from '@/components/home/StatsSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import CTASection from '@/components/home/CTASection';
@@ -30,7 +30,7 @@ const Index = () => {
     <main className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
-      <ServicesSection />
+      <ServicesShowcase />
       <StatsSection />
       <TestimonialsSection />
       <CTASection />
