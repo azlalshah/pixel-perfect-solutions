@@ -106,7 +106,7 @@ const UIUXDesign = () => {
                   </Button>
                 </Link>
                 <Link to="/portfolio">
-                  <Button size="lg" variant="outline" className="border-primary/50 hover:bg-primary/10">
+                  <Button size="lg" variant="outline">
                     View Portfolio
                   </Button>
                 </Link>
