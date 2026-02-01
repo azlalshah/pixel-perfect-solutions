@@ -343,16 +343,20 @@ const TechShowcase3D = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* 3D Canvas */}
-          <div className="relative h-[450px] lg:h-[550px] rounded-2xl overflow-hidden glass border border-border/50 shadow-2xl">
+          <div className="relative h-[450px] lg:h-[550px] rounded-2xl overflow-hidden">
             <Suspense fallback={
-              <div className="w-full h-full flex items-center justify-center bg-background/50">
+              <div className="w-full h-full flex items-center justify-center">
                 <div className="flex flex-col items-center gap-3">
                   <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin" />
                   <span className="text-sm text-muted-foreground">Loading 3D scene...</span>
                 </div>
               </div>
             }>
-              <Canvas camera={{ position: [0, 0, 8], fov: 50 }}>
+              <Canvas 
+                camera={{ position: [0, 0, 8], fov: 50 }}
+                style={{ background: 'transparent' }}
+                gl={{ alpha: true, antialias: true }}
+              >
                 <Scene />
               </Canvas>
             </Suspense>
