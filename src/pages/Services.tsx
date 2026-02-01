@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Code, Palette, Megaphone, Smartphone, Cloud, Video, Pen, Target, Server, Layout, ShoppingCart, Globe, Layers, FileCode, Package, ArrowRight, Check } from 'lucide-react';
+import { Code, Palette, Megaphone, Smartphone, Cloud, Video, Pen, Target, Server, Layout, ShoppingCart, Globe, Layers, FileCode, Package, BookOpen, ArrowRight, Check } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -152,6 +152,14 @@ const Services = () => {
       features: ['Quick Setup', 'Customization', 'Multiple Categories', 'Support'],
       link: '/services/premade-templates',
       gradient: 'from-teal-500 to-cyan-500',
+    },
+    {
+      icon: BookOpen,
+      title: 'Ebook Design',
+      description: 'Professional ebook design and formatting for all digital platforms.',
+      features: ['Custom Layout', 'Cover Design', 'Multi-format Export', 'Print-Ready'],
+      link: '/services/ebook-design',
+      gradient: 'from-amber-500 to-yellow-500',
     },
   ];
 

@@ -58,6 +58,7 @@ const Navigation = () => {
         { name: 'Webflow', path: '/services/webflow' },
         { name: 'Squarespace', path: '/services/squarespace' },
         { name: 'Premade Templates', path: '/services/premade-templates' },
+        { name: 'Ebook Design', path: '/services/ebook-design' },
       ],
     },
     { name: 'Portfolio', path: '/portfolio' },
