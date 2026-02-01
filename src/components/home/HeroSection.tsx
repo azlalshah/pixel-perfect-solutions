@@ -158,12 +158,12 @@ const HeroSection = () => {
           {/* Right Column - Image */}
           <div className="hero-image relative">
             {/* Main Image Container */}
-            <div className="relative z-10">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl glow">
+            <div className="relative z-10 animate-float">
+              <div className="relative rounded-2xl overflow-hidden">
                 <img 
                   src={heroImage} 
                   alt="Digital solutions team collaborating" 
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover drop-shadow-2xl"
                 />
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
