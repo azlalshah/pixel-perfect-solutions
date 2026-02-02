@@ -153,7 +153,7 @@ const HeroSection = () => {
               <span className="hero-title-line block gradient-text">Exceptional Digital</span>
               <span className="hero-title-line block">
                 {displayText}
-                <span className="inline-block w-[3px] h-[1em] bg-primary ml-1 animate-pulse" />
+                <span className="inline-block w-[3px] h-[0.9em] bg-primary ml-1 align-middle animate-cursor-blink" />
               </span>
             </h1>
 
