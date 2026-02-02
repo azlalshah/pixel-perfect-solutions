@@ -71,7 +71,7 @@ const Navigation = () => {
       <nav
         className={`fixed left-0 right-0 z-50 transition-all duration-500 ease-out ${
           isScrolled 
-            ? 'top-4 mx-4 md:mx-8 lg:mx-16 xl:mx-32 bg-background/95 backdrop-blur-lg shadow-xl py-3 rounded-2xl border border-border' 
+            ? 'top-4 mx-4 md:mx-8 lg:mx-16 xl:mx-32 bg-background/95 backdrop-blur-lg py-3 rounded-2xl border border-border shadow-[0_8px_32px_-8px_hsl(var(--primary)/0.25),0_4px_16px_-4px_hsl(var(--primary)/0.15)]' 
             : 'top-0 mx-0 py-5 bg-transparent'
         }`}
       >
