@@ -1,12 +1,47 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, CheckCircle, Clock, Headphones, ThumbsUp, Users, Award, Globe } from 'lucide-react';
 import gsap from 'gsap';
 import heroImage from '@/assets/hero-illustration.png';
 
+const typingWords = ['Experiences', 'Solutions', 'Products', 'Platforms'];
+
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  // Typing animation effect
+  useEffect(() => {
+    const currentWord = typingWords[currentWordIndex];
+    const typingSpeed = isDeleting ? 50 : 100;
+    const pauseTime = isDeleting ? 200 : 2000;
+
+    if (!isDeleting && displayText === currentWord) {
+      // Finished typing, pause then start deleting
+      const timeout = setTimeout(() => setIsDeleting(true), pauseTime);
+      return () => clearTimeout(timeout);
+    }
+
+    if (isDeleting && displayText === '') {
+      // Finished deleting, move to next word
+      setIsDeleting(false);
+      setCurrentWordIndex((prev) => (prev + 1) % typingWords.length);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      if (isDeleting) {
+        setDisplayText(currentWord.substring(0, displayText.length - 1));
+      } else {
+        setDisplayText(currentWord.substring(0, displayText.length + 1));
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, currentWordIndex]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -116,7 +151,10 @@ const HeroSection = () => {
             <h1 ref={titleRef} className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
               <span className="hero-title-line block">We Build</span>
               <span className="hero-title-line block gradient-text">Exceptional Digital</span>
-              <span className="hero-title-line block">Experiences</span>
+              <span className="hero-title-line block">
+                {displayText}
+                <span className="inline-block w-[3px] h-[1em] bg-primary ml-1 animate-pulse" />
+              </span>
             </h1>
 
             {/* Description */}
