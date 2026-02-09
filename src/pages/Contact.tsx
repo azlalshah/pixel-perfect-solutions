@@ -21,6 +21,8 @@ const Contact = () => {
     message: '',
   });
 
+  const location = useLocation();
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -32,6 +34,14 @@ const Contact = () => {
 
     return () => ctx.revert();
   }, []);
+
+  useEffect(() => {
+    if (location.hash === '#contact-form') {
+      setTimeout(() => {
+        document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    }
+  }, [location]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
