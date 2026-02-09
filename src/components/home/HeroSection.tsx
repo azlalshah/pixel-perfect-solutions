@@ -8,6 +8,7 @@ import heroImage from '@/assets/hero-illustration.png';
 const typingWords = ['Experiences', 'Solutions', 'Products', 'Platforms'];
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
