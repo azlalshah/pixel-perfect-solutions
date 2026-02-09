@@ -2,8 +2,12 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Check, Code, Database, Globe, Zap, Shield, Rocket, Atom, Triangle, Server, FileCode, Leaf, Palette, Share2, type LucideIcon } from 'lucide-react';
+import { Check, Code, Database, Globe, Zap, Shield, Rocket, Atom, Triangle, Server, FileCode, Leaf, Palette, Share2, type LucideIcon, Clock, Users, Lightbulb, Settings } from 'lucide-react';
 import PricingPackages, { PricingPackage } from '@/components/PricingPackages';
+import FloatingElements from '@/components/FloatingElements';
+import ProcessSection from '@/components/services/ProcessSection';
+import CaseStudySection from '@/components/services/CaseStudySection';
+import BenefitsSection from '@/components/services/BenefitsSection';
 import FloatingElements from '@/components/FloatingElements';
 
 const WebDevelopment = () => {
