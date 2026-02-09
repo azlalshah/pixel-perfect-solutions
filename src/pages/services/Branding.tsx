@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Palette, BookOpen, Target, Users, TrendingUp, Heart, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/services/branding.png';
+import ProcessSection from '@/components/services/ProcessSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
