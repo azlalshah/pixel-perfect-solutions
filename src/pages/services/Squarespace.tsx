@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Layout, Image, Calendar, ShoppingBag, FileText, Mail, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/services/squarespace.png';
+import ProcessSection from '@/components/services/ProcessSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
