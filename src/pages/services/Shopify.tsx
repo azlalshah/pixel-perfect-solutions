@@ -106,6 +106,17 @@ const Shopify = () => {
         </div>
       </section>
 
+      <ProcessSection
+        title="Shopify Setup Process"
+        subtitle="How We Launch"
+        steps={[
+          { step: '01', title: 'Store Planning', description: 'Plan store structure, categories, and payment setup.' },
+          { step: '02', title: 'Theme Design', description: 'Custom theme design or premium theme customization.' },
+          { step: '03', title: 'Product Setup', description: 'Upload products, configure shipping, and test checkout.' },
+          { step: '04', title: 'Launch & Optimize', description: 'Go live with marketing tools and analytics tracking.' },
+        ]}
+      />
+
       <section className="py-20 bg-muted/30">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Ready to Start Selling Online?</h2>

@@ -101,6 +101,17 @@ const WordPress = () => {
         </div>
       </section>
 
+      <ProcessSection
+        title="WordPress Development Process"
+        subtitle="How We Build"
+        steps={[
+          { step: '01', title: 'Discovery', description: 'Understand your goals, content, and functionality requirements.' },
+          { step: '02', title: 'Design', description: 'Custom theme design matching your brand identity perfectly.' },
+          { step: '03', title: 'Development', description: 'Build custom theme and plugins with optimized code.' },
+          { step: '04', title: 'Launch & Train', description: 'Deploy, test, and train you on content management.' },
+        ]}
+      />
+
       <section className="py-20 bg-muted/30">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Ready to Launch Your WordPress Site?</h2>

@@ -101,6 +101,17 @@ const Wix = () => {
         </div>
       </section>
 
+      <ProcessSection
+        title="Wix Development Process"
+        subtitle="How We Build"
+        steps={[
+          { step: '01', title: 'Consultation', description: 'Discuss your goals, content needs, and design preferences.' },
+          { step: '02', title: 'Design & Build', description: 'Custom Wix design with responsive layouts and features.' },
+          { step: '03', title: 'Content & SEO', description: 'Add your content, optimize for search engines.' },
+          { step: '04', title: 'Launch & Train', description: 'Go live and learn how to manage your own site.' },
+        ]}
+      />
+
       <section className="py-20 bg-muted/30">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Ready for Your Wix Website?</h2>

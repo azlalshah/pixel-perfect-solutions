@@ -106,6 +106,17 @@ const Webflow = () => {
         </div>
       </section>
 
+      <ProcessSection
+        title="Webflow Development Process"
+        subtitle="Our Approach"
+        steps={[
+          { step: '01', title: 'Strategy & Wireframes', description: 'Plan site structure, content flow, and interaction design.' },
+          { step: '02', title: 'Visual Design', description: 'Pixel-perfect design with animations and interactions.' },
+          { step: '03', title: 'Webflow Build', description: 'Build in Webflow with CMS, interactions, and responsive design.' },
+          { step: '04', title: 'Launch & Handoff', description: 'Deploy on Webflow hosting and train your team.' },
+        ]}
+      />
+
       <section className="py-20">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Ready for a Webflow Website?</h2>
