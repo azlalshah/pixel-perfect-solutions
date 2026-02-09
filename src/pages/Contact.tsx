@@ -213,17 +213,6 @@ const Contact = () => {
                   </div>
                 ))}
               </div>
-
-              {/* Map Placeholder */}
-              <div className="mt-8 glass rounded-xl overflow-hidden">
-                <div className="aspect-video bg-muted/50 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-12 h-12 mx-auto mb-4 text-primary" />
-                    <p className="text-muted-foreground">Interactive Map</p>
-                    <p className="text-sm text-muted-foreground">San Francisco, CA</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
