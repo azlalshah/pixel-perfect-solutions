@@ -8,7 +8,6 @@ import FloatingElements from '@/components/FloatingElements';
 import ProcessSection from '@/components/services/ProcessSection';
 import CaseStudySection from '@/components/services/CaseStudySection';
 import BenefitsSection from '@/components/services/BenefitsSection';
-import FloatingElements from '@/components/FloatingElements';
 
 const WebDevelopment = () => {
   const features = [
