@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Code, Layers, Zap, MousePointer, Palette, Settings, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/services/webflow.png';
+import ProcessSection from '@/components/services/ProcessSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
