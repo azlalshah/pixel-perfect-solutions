@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Palette, BookOpen, Target, Users, TrendingUp, Heart, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/services/branding.png';
+import ProcessSection from '@/components/services/ProcessSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -128,6 +129,17 @@ const Branding = () => {
           </div>
         </div>
       </section>
+
+      <ProcessSection
+        title="Our Branding Process"
+        subtitle="How We Build Brands"
+        steps={[
+          { step: '01', title: 'Brand Audit', description: 'Analyze your current brand positioning and market landscape.' },
+          { step: '02', title: 'Strategy & Identity', description: 'Define brand strategy, voice, values, and visual direction.' },
+          { step: '03', title: 'Design & Creation', description: 'Create logo, visual identity, and all brand assets.' },
+          { step: '04', title: 'Guidelines & Launch', description: 'Deliver comprehensive brand book and launch strategy.' },
+        ]}
+      />
 
       {/* CTA Section */}
       <section className="py-20 bg-muted/30">

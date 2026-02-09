@@ -7,6 +7,8 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Server, Database, Shield, Zap, Code, Lock, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/services/backend-development.png';
+import ProcessSection from '@/components/services/ProcessSection';
+import CaseStudySection from '@/components/services/CaseStudySection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -93,6 +95,45 @@ const BackendDevelopment = () => {
           </div>
         </div>
       </section>
+
+      <ProcessSection
+        title="Backend Development Process"
+        subtitle="How We Build"
+        steps={[
+          { step: '01', title: 'Requirements Analysis', description: 'Define API contracts, data models, and system architecture.' },
+          { step: '02', title: 'Architecture Design', description: 'Design scalable microservices or monolith architecture.' },
+          { step: '03', title: 'Development & Testing', description: 'TDD approach with comprehensive API and integration tests.' },
+          { step: '04', title: 'Deploy & Monitor', description: 'Containerized deployment with logging and monitoring.' },
+        ]}
+      />
+
+      <CaseStudySection
+        title="Backend Projects"
+        subtitle="Our Work"
+        cases={[
+          {
+            title: 'Payment Processing API',
+            category: 'FinTech',
+            description: 'High-throughput payment gateway handling millions of transactions.',
+            image: 'https://images.unsplash.com/photo-1563986768609-322da13575f2?w=600&auto=format&fit=crop',
+            results: ['10M+ transactions/month', '99.999% uptime', 'PCI DSS compliant'],
+          },
+          {
+            title: 'Real-time Chat System',
+            category: 'WebSocket',
+            description: 'Scalable messaging platform with presence and typing indicators.',
+            image: 'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&auto=format&fit=crop',
+            results: ['500K concurrent users', '<50ms latency', 'End-to-end encrypted'],
+          },
+          {
+            title: 'Data Pipeline Platform',
+            category: 'Big Data',
+            description: 'ETL pipeline processing terabytes of data for analytics.',
+            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop',
+            results: ['5TB daily processing', '90% faster insights', 'Cost reduced by 50%'],
+          },
+        ]}
+      />
 
       <section className="py-20 bg-muted/30">
         <div className="container-custom text-center">

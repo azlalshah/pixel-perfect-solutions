@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Layout, Puzzle, Gauge, Shield, RefreshCw, HeadphonesIcon, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/services/wordpress.png';
+import ProcessSection from '@/components/services/ProcessSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,6 +100,17 @@ const WordPress = () => {
           </div>
         </div>
       </section>
+
+      <ProcessSection
+        title="WordPress Development Process"
+        subtitle="How We Build"
+        steps={[
+          { step: '01', title: 'Discovery', description: 'Understand your goals, content, and functionality requirements.' },
+          { step: '02', title: 'Design', description: 'Custom theme design matching your brand identity perfectly.' },
+          { step: '03', title: 'Development', description: 'Build custom theme and plugins with optimized code.' },
+          { step: '04', title: 'Launch & Train', description: 'Deploy, test, and train you on content management.' },
+        ]}
+      />
 
       <section className="py-20 bg-muted/30">
         <div className="container-custom text-center">

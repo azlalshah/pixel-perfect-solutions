@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Video, Play, Film, Sparkles, Zap, Clock, ArrowRight, Check } from 'lucide-react';
 import heroImage from '@/assets/services/video-animation.png';
+import CaseStudySection from '@/components/services/CaseStudySection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -109,6 +110,34 @@ const VideoAnimation = () => {
           </div>
         </div>
       </section>
+
+      <CaseStudySection
+        title="Animation Portfolio"
+        subtitle="Featured Work"
+        cases={[
+          {
+            title: 'SaaS Product Explainer',
+            category: '2D Animation',
+            description: 'Engaging explainer video that increased product signups by 45%.',
+            image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&auto=format&fit=crop',
+            results: ['2M+ YouTube views', '45% more signups', '30-second avg watch time'],
+          },
+          {
+            title: 'Brand Story Animation',
+            category: 'Motion Graphics',
+            description: 'Animated brand story for a tech startup launch campaign.',
+            image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&auto=format&fit=crop',
+            results: ['Featured on Product Hunt', '500K social impressions', '200% engagement increase'],
+          },
+          {
+            title: '3D Product Visualization',
+            category: '3D Animation',
+            description: 'Photorealistic 3D product renders and animation for marketing.',
+            image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop',
+            results: ['Used by 50+ retailers', '35% higher conversion', 'Award-winning quality'],
+          },
+        ]}
+      />
 
       <section className="py-20 bg-muted/30">
         <div className="container-custom text-center">

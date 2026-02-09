@@ -243,6 +243,27 @@ const Portfolio = () => {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-16 bg-muted/50">
+        <div className="container-custom">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { number: '500+', label: 'Projects Completed' },
+              { number: '150+', label: 'Happy Clients' },
+              { number: '98%', label: 'Client Satisfaction' },
+              { number: '15+', label: 'Industries Served' },
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <div className="text-3xl md:text-4xl font-heading font-bold gradient-text mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Filter Buttons */}
       <section className="py-8">
         <div className="container-custom">

@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Layout, Image, Calendar, ShoppingBag, FileText, Mail, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/services/squarespace.png';
+import ProcessSection from '@/components/services/ProcessSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,6 +100,17 @@ const Squarespace = () => {
           </div>
         </div>
       </section>
+
+      <ProcessSection
+        title="Squarespace Process"
+        subtitle="How We Build"
+        steps={[
+          { step: '01', title: 'Template Selection', description: 'Choose the perfect template for your industry and needs.' },
+          { step: '02', title: 'Customization', description: 'Customize design, colors, fonts to match your brand.' },
+          { step: '03', title: 'Content Setup', description: 'Add pages, galleries, blog posts, and integrations.' },
+          { step: '04', title: 'Launch & Support', description: 'Go live with training and ongoing support.' },
+        ]}
+      />
 
       <section className="py-20 bg-muted/30">
         <div className="container-custom text-center">

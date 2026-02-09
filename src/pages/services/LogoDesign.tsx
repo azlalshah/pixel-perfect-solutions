@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Pen, Layers, Target, Palette, RefreshCw, Award, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/services/logo-design.png';
+import ProcessSection from '@/components/services/ProcessSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,6 +105,17 @@ const LogoDesign = () => {
           </div>
         </div>
       </section>
+
+      <ProcessSection
+        title="Our Logo Design Process"
+        subtitle="How We Create"
+        steps={[
+          { step: '01', title: 'Brand Discovery', description: 'Understand your brand values, target audience, and competitors.' },
+          { step: '02', title: 'Concept Sketching', description: 'Hand-sketch multiple creative concepts and directions.' },
+          { step: '03', title: 'Digital Refinement', description: 'Digitize top concepts with color variations and typography.' },
+          { step: '04', title: 'Final Delivery', description: 'Deliver final files in all formats with usage guidelines.' },
+        ]}
+      />
 
       <section className="py-20 bg-muted/30">
         <div className="container-custom text-center">

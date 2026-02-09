@@ -2,9 +2,12 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Check, Code, Database, Globe, Zap, Shield, Rocket, Atom, Triangle, Server, FileCode, Leaf, Palette, Share2, type LucideIcon } from 'lucide-react';
+import { Check, Code, Database, Globe, Zap, Shield, Rocket, Atom, Triangle, Server, FileCode, Leaf, Palette, Share2, type LucideIcon, Clock, Users, Lightbulb, Settings } from 'lucide-react';
 import PricingPackages, { PricingPackage } from '@/components/PricingPackages';
 import FloatingElements from '@/components/FloatingElements';
+import ProcessSection from '@/components/services/ProcessSection';
+import CaseStudySection from '@/components/services/CaseStudySection';
+import BenefitsSection from '@/components/services/BenefitsSection';
 
 const WebDevelopment = () => {
   const features = [
@@ -220,6 +223,61 @@ const WebDevelopment = () => {
           </div>
         </div>
       </section>
+
+      {/* Process Section */}
+      <ProcessSection
+        title="Our Development Process"
+        subtitle="How We Build"
+        steps={[
+          { step: '01', title: 'Discovery & Planning', description: 'We analyze your requirements, target audience, and business goals to create a detailed project roadmap.' },
+          { step: '02', title: 'Design & Prototyping', description: 'Interactive wireframes and high-fidelity designs are created for your approval before development begins.' },
+          { step: '03', title: 'Development & Testing', description: 'Our engineers build your application using agile sprints with continuous testing and quality assurance.' },
+          { step: '04', title: 'Launch & Support', description: 'We deploy your application, monitor performance, and provide ongoing maintenance and support.' },
+        ]}
+      />
+
+      {/* Case Studies */}
+      <CaseStudySection
+        title="Recent Projects"
+        subtitle="Success Stories"
+        cases={[
+          {
+            title: 'E-Commerce Platform Redesign',
+            category: 'Web App',
+            description: 'Complete rebuild of an e-commerce platform resulting in 3x faster load times.',
+            image: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?w=600&auto=format&fit=crop',
+            results: ['300% increase in page speed', '45% higher conversion rate', '$2M+ in additional revenue'],
+          },
+          {
+            title: 'SaaS Dashboard Application',
+            category: 'Enterprise',
+            description: 'Custom analytics dashboard for a Fortune 500 company with real-time data.',
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop',
+            results: ['50K+ daily active users', '99.99% uptime achieved', 'Reduced costs by 40%'],
+          },
+          {
+            title: 'Restaurant Booking System',
+            category: 'Full Stack',
+            description: 'Online reservation platform with table management and customer notifications.',
+            image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&auto=format&fit=crop',
+            results: ['10K+ bookings per month', '90% customer satisfaction', 'Automated 80% of operations'],
+          },
+        ]}
+      />
+
+      {/* Benefits */}
+      <BenefitsSection
+        title="Why Choose Us"
+        subtitle="Our Advantages"
+        description="We bring years of experience and cutting-edge expertise to every project."
+        image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop"
+        benefits={[
+          { icon: Clock, title: 'Fast Delivery', description: 'Agile sprints ensure rapid development.' },
+          { icon: Shield, title: 'Secure Code', description: 'Security-first development approach.' },
+          { icon: Users, title: 'Dedicated Team', description: 'Expert developers assigned to you.' },
+          { icon: Lightbulb, title: 'Innovative Solutions', description: 'Latest tech for best results.' },
+        ]}
+      />
 
       <Footer />
     </div>

@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { ShoppingCart, CreditCard, Package, BarChart3, Palette, Headphones, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/services/shopify.png';
+import ProcessSection from '@/components/services/ProcessSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,6 +105,17 @@ const Shopify = () => {
           </div>
         </div>
       </section>
+
+      <ProcessSection
+        title="Shopify Setup Process"
+        subtitle="How We Launch"
+        steps={[
+          { step: '01', title: 'Store Planning', description: 'Plan store structure, categories, and payment setup.' },
+          { step: '02', title: 'Theme Design', description: 'Custom theme design or premium theme customization.' },
+          { step: '03', title: 'Product Setup', description: 'Upload products, configure shipping, and test checkout.' },
+          { step: '04', title: 'Launch & Optimize', description: 'Go live with marketing tools and analytics tracking.' },
+        ]}
+      />
 
       <section className="py-20 bg-muted/30">
         <div className="container-custom text-center">
