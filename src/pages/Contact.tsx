@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -20,6 +21,8 @@ const Contact = () => {
     message: '',
   });
 
+  const location = useLocation();
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -31,6 +34,14 @@ const Contact = () => {
 
     return () => ctx.revert();
   }, []);
+
+  useEffect(() => {
+    if (location.hash === '#contact-form') {
+      setTimeout(() => {
+        document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    }
+  }, [location]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -104,7 +115,7 @@ const Contact = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <div className="contact-animate">
+            <div id="contact-form" className="contact-animate scroll-mt-24">
               <h2 className="text-2xl font-heading font-bold mb-8">Send us a Message</h2>
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">

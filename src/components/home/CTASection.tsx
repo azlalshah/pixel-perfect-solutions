@@ -77,7 +77,7 @@ const CTASection = () => {
                 size="lg"
                 className="bg-white text-primary hover:bg-white/90 transition-all group text-lg px-8 py-6"
               >
-                <Link to="/contact">
+                <Link to="/contact#contact-form">
                   Start Your Project
                   <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -88,7 +88,7 @@ const CTASection = () => {
                 variant="outline"
                 className="border-2 border-white bg-white/10 text-white hover:bg-white/20 transition-all text-lg px-8 py-6"
               >
-                <Link to="/contact">Schedule a Call</Link>
+                <Link to="/contact#contact-form">Schedule a Call</Link>
               </Button>
             </div>
           </div>
