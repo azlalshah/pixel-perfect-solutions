@@ -103,7 +103,7 @@ const WebDevelopment = () => {
                 Custom web solutions built with cutting-edge technologies for optimal performance, scalability, and exceptional user experience.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact">
+                <Link to="/contact#contact-form">
                   <Button size="lg" className="gradient-bg glow">
                     Start Your Project
                   </Button>

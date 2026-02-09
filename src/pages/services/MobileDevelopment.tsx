@@ -104,7 +104,7 @@ const MobileDevelopment = () => {
                 High-performance mobile applications for iOS and Android that deliver exceptional user experiences.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact">
+                <Link to="/contact#contact-form">
                   <Button size="lg" className="gradient-bg glow">
                     Start Your App
                   </Button>

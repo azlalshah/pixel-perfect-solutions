@@ -102,7 +102,7 @@ const DigitalMarketing = () => {
                 Data-driven marketing strategies that increase visibility, drive traffic, and convert visitors into loyal customers.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact">
+                <Link to="/contact#contact-form">
                   <Button size="lg" className="gradient-bg glow">
                     Get Started
                   </Button>

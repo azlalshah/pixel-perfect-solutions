@@ -102,7 +102,7 @@ const CloudDevOps = () => {
                 Modern cloud solutions and DevOps practices that ensure reliability, scalability, and efficiency for your applications.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact">
+                <Link to="/contact#contact-form">
                   <Button size="lg" className="gradient-bg glow">
                     Get Started
                   </Button>
