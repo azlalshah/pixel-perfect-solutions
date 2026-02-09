@@ -31,6 +31,7 @@ import Webflow from "./pages/services/Webflow";
 import Squarespace from "./pages/services/Squarespace";
 import PremadeTemplates from "./pages/services/PremadeTemplates";
 import EbookDesign from "./pages/services/EbookDesign";
+import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,7 +40,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <TooltipProvider>
-        
+        <ScrollToTop />
         <Toaster />
         <Sonner />
         <Routes>
