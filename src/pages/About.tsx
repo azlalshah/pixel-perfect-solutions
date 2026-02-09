@@ -210,6 +210,71 @@ const About = () => {
         </div>
       </section>
 
+      {/* Team Culture */}
+      <section className="py-20">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block px-4 py-2 rounded-full glass text-primary text-sm font-medium mb-4">
+                Our Culture
+              </span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+                Where Innovation Meets <span className="gradient-text">Collaboration</span>
+              </h2>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                At TechNova, we foster a culture of continuous learning and creative problem-solving. 
+                Our diverse team of engineers, designers, and strategists work together to push 
+                the boundaries of what's possible in technology.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  'Remote-First Culture',
+                  'Continuous Learning',
+                  'Open Communication',
+                  'Work-Life Balance',
+                  'Innovation Labs',
+                  'Team Retreats',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full gradient-bg flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                    <span className="text-muted-foreground text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 gradient-bg rounded-2xl blur-2xl opacity-15" />
+              <div className="relative bg-card rounded-2xl p-2 shadow-xl border border-border">
+                <img 
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop" 
+                  alt="Team collaboration"
+                  className="rounded-xl w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container-custom text-center">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+            Ready to Work With <span className="gradient-text">Us</span>?
+          </h2>
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+            Let's discuss how we can help transform your business with innovative technology solutions.
+          </p>
+          <Link to="/contact">
+            <Button size="lg" className="gradient-bg">
+              Get In Touch
+            </Button>
+          </Link>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
