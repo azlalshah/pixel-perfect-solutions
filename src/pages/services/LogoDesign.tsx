@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Pen, Layers, Target, Palette, RefreshCw, Award, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/services/logo-design.png';
+import ProcessSection from '@/components/services/ProcessSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
