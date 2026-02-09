@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { ShoppingCart, CreditCard, Package, BarChart3, Palette, Headphones, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/services/shopify.png';
+import ProcessSection from '@/components/services/ProcessSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
