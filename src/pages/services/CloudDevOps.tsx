@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { Check, Cloud, Server, Shield, Zap, Lock, BarChart3 } from 'lucide-react';
 import PricingPackages, { PricingPackage } from '@/components/PricingPackages';
 import FloatingElements from '@/components/FloatingElements';
+import ProcessSection from '@/components/services/ProcessSection';
+import CaseStudySection from '@/components/services/CaseStudySection';
 
 const CloudDevOps = () => {
   const features = [
