@@ -40,6 +40,7 @@ const Footer = () => {
       { name: 'Our Team', path: '/team' },
       { name: 'Portfolio', path: '/portfolio' },
       { name: 'Careers', path: '/careers' },
+      { name: 'FAQ', path: '/faq' },
       { name: 'Contact', path: '/contact' },
       { name: 'Digital Marketing', path: '/services/digital-marketing' },
     ],
