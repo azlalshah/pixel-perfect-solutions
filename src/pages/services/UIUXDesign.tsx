@@ -2,9 +2,11 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Check, Palette, Layers, MousePointer, PenTool, Eye, Sparkles } from 'lucide-react';
+import { Check, Palette, Layers, MousePointer, PenTool, Eye, Sparkles, Clock, Users, Award, Target } from 'lucide-react';
 import PricingPackages, { PricingPackage } from '@/components/PricingPackages';
 import FloatingElements from '@/components/FloatingElements';
+import ProcessSection from '@/components/services/ProcessSection';
+import CaseStudySection from '@/components/services/CaseStudySection';
 
 const UIUXDesign = () => {
   const features = [
