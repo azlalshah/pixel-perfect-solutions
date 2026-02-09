@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import gsap from 'gsap';
@@ -72,18 +73,22 @@ const CTASection = () => {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
+                asChild
                 size="lg"
                 className="bg-white text-primary hover:bg-white/90 transition-all group text-lg px-8 py-6"
               >
-                Start Your Project
-                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                <Link to="/contact">
+                  Start Your Project
+                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
               <Button
+                asChild
                 size="lg"
                 variant="outline"
                 className="border-2 border-white bg-white/10 text-white hover:bg-white/20 transition-all text-lg px-8 py-6"
               >
-                Schedule a Call
+                <Link to="/contact">Schedule a Call</Link>
               </Button>
             </div>
           </div>
