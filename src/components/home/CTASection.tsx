@@ -77,7 +77,7 @@ const CTASection = () => {
                 size="lg"
                 className="bg-white text-primary hover:bg-white/90 transition-all group text-lg px-8 py-6"
               >
-                <Link to="/contact">
+                <Link to="/contact#contact-form">
                   Start Your Project
                   <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Link>
