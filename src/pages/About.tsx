@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
 import { Target, Eye, Heart, Award, Users, Globe } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
