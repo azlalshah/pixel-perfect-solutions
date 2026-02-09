@@ -115,7 +115,7 @@ const Contact = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <div className="contact-animate">
+            <div id="contact-form" className="contact-animate scroll-mt-24">
               <h2 className="text-2xl font-heading font-bold mb-8">Send us a Message</h2>
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
