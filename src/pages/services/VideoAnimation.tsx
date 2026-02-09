@@ -42,12 +42,10 @@ const VideoAnimation = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-30" />
         <div className="absolute top-20 right-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-blob" />
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
-
         <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="hero-content">
@@ -59,7 +57,7 @@ const VideoAnimation = () => {
                 From explainer videos to complex 3D animations, we create visually stunning content that engages your audience and communicates your message effectively.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact">
+                <Link to="/contact#contact-form">
                   <Button size="lg" className="gradient-bg">Get Started <ArrowRight className="ml-2 w-4 h-4" /></Button>
                 </Link>
                 <Link to="/portfolio">
@@ -74,7 +72,6 @@ const VideoAnimation = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-20 bg-muted/30">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -95,7 +92,6 @@ const VideoAnimation = () => {
         </div>
       </section>
 
-      {/* Process Section */}
       <section className="py-20">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -114,14 +110,13 @@ const VideoAnimation = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 bg-muted/30">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Ready to Bring Your Ideas to Life?</h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             Let's create stunning animations that captivate your audience and tell your story.
           </p>
-          <Link to="/contact">
+          <Link to="/contact#contact-form">
             <Button size="lg" className="gradient-bg">Start Your Project</Button>
           </Link>
         </div>

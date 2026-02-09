@@ -61,7 +61,7 @@ const Branding = () => {
                 We create comprehensive brand identities that resonate with your audience, differentiate you from competitors, and drive business growth.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact">
+                <Link to="/contact#contact-form">
                   <Button size="lg" className="gradient-bg">Get Started <ArrowRight className="ml-2 w-4 h-4" /></Button>
                 </Link>
                 <Link to="/portfolio">
@@ -121,7 +121,7 @@ const Branding = () => {
               <h3 className="text-2xl font-heading font-bold mb-4">Complete Branding Package</h3>
               <p className="text-4xl font-bold text-primary mb-4">Starting at $2,499</p>
               <p className="text-muted-foreground mb-6">Everything included for a complete brand transformation.</p>
-              <Link to="/contact">
+              <Link to="/contact#contact-form">
                 <Button className="w-full gradient-bg">Get a Custom Quote</Button>
               </Link>
             </div>
@@ -136,7 +136,7 @@ const Branding = () => {
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             Let's create a brand identity that captures your vision and connects with your audience.
           </p>
-          <Link to="/contact">
+          <Link to="/contact#contact-form">
             <Button size="lg" className="gradient-bg">Start Your Branding Project</Button>
           </Link>
         </div>
