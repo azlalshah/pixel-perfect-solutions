@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, CheckCircle, Clock, Headphones, ThumbsUp, Users, Award, Globe } from 'lucide-react';
 import gsap from 'gsap';
@@ -7,6 +8,7 @@ import heroImage from '@/assets/hero-illustration.png';
 const typingWords = ['Experiences', 'Solutions', 'Products', 'Platforms'];
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -178,6 +180,7 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 className="gradient-bg hover:opacity-90 transition-all group text-lg px-8 py-6 glow"
+                onClick={() => navigate('/contact#contact-form')}
               >
                 Start Your Project
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -186,6 +189,7 @@ const HeroSection = () => {
                 size="lg"
                 variant="outline"
                 className="border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all text-lg px-8 py-6 group"
+                onClick={() => navigate('/portfolio')}
               >
                 <Play className="mr-2 w-5 h-5 transition-transform group-hover:scale-110" />
                 Watch Showreel
