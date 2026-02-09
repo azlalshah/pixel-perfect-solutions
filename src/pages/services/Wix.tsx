@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Layout, Sparkles, Gauge, Search, ShoppingBag, Headphones, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/services/wix.png';
+import ProcessSection from '@/components/services/ProcessSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
