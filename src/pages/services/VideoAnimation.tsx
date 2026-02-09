@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Video, Play, Film, Sparkles, Zap, Clock, ArrowRight, Check } from 'lucide-react';
 import heroImage from '@/assets/services/video-animation.png';
+import CaseStudySection from '@/components/services/CaseStudySection';
 
 gsap.registerPlugin(ScrollTrigger);
 
