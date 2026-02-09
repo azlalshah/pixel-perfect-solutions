@@ -63,6 +63,7 @@ const Navigation = () => {
     },
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'Team', path: '/team' },
+    { name: 'FAQ', path: '/faq' },
     { name: 'Contact', path: '/contact' },
   ];
 
