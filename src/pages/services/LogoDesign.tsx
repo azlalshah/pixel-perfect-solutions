@@ -38,40 +38,26 @@ const LogoDesign = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-
-      {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-30" />
         <div className="absolute top-20 right-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-blob" />
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
-
         <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="hero-content">
               <span className="inline-block px-4 py-2 rounded-full glass text-primary text-sm font-medium mb-6">Logo Design</span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">
-                Memorable <span className="gradient-text">Logo Design</span> That Defines Your Brand
-              </h1>
-              <p className="text-lg text-muted-foreground mb-8">
-                Your logo is the face of your brand. We create distinctive, timeless logos that make lasting impressions and build brand recognition.
-              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">Memorable <span className="gradient-text">Logo Design</span> That Defines Your Brand</h1>
+              <p className="text-lg text-muted-foreground mb-8">Your logo is the face of your brand. We create distinctive, timeless logos that make lasting impressions and build brand recognition.</p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact">
-                  <Button size="lg" className="gradient-bg">Get Started <ArrowRight className="ml-2 w-4 h-4" /></Button>
-                </Link>
-                <Link to="/portfolio">
-                  <Button size="lg" variant="outline">View Portfolio</Button>
-                </Link>
+                <Link to="/contact#contact-form"><Button size="lg" className="gradient-bg">Get Started <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
+                <Link to="/portfolio"><Button size="lg" variant="outline">View Portfolio</Button></Link>
               </div>
             </div>
-            <div className="hero-image">
-              <img src={heroImage} alt="Logo Design Services" className="w-full rounded-2xl shadow-2xl" />
-            </div>
+            <div className="hero-image"><img src={heroImage} alt="Logo Design Services" className="w-full rounded-2xl shadow-2xl" /></div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-20 bg-muted/30">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -81,9 +67,7 @@ const LogoDesign = () => {
           <div className="features-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
               <div key={index} className="feature-card glass p-6 rounded-2xl hover:scale-105 transition-transform duration-300">
-                <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-white" />
-                </div>
+                <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mb-4"><feature.icon className="w-6 h-6 text-white" /></div>
                 <h3 className="text-xl font-heading font-semibold mb-2">{feature.title}</h3>
                 <p className="text-muted-foreground">{feature.description}</p>
               </div>
@@ -92,7 +76,6 @@ const LogoDesign = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
       <section className="py-20">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -108,14 +91,12 @@ const LogoDesign = () => {
                 <ul className="space-y-3 mb-8">
                   {pkg.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2">
-                      <div className="w-5 h-5 rounded-full gradient-bg flex items-center justify-center">
-                        <span className="text-white text-xs">✓</span>
-                      </div>
+                      <div className="w-5 h-5 rounded-full gradient-bg flex items-center justify-center"><span className="text-white text-xs">✓</span></div>
                       <span className="text-muted-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <Link to="/contact">
+                <Link to="/contact#contact-form">
                   <Button className={`w-full ${pkg.popular ? 'gradient-bg' : ''}`} variant={pkg.popular ? 'default' : 'outline'}>Choose Plan</Button>
                 </Link>
               </div>
@@ -124,16 +105,11 @@ const LogoDesign = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 bg-muted/30">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Ready to Create Your Perfect Logo?</h2>
-          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Let's design a logo that captures your brand essence and stands the test of time.
-          </p>
-          <Link to="/contact">
-            <Button size="lg" className="gradient-bg">Start Your Project</Button>
-          </Link>
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">Let's design a logo that captures your brand essence and stands the test of time.</p>
+          <Link to="/contact#contact-form"><Button size="lg" className="gradient-bg">Start Your Project</Button></Link>
         </div>
       </section>
 

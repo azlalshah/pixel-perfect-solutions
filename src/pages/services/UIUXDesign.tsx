@@ -100,7 +100,7 @@ const UIUXDesign = () => {
                 Beautiful, intuitive interfaces that enhance user experience and drive engagement with your digital products.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact">
+                <Link to="/contact#contact-form">
                   <Button size="lg" className="gradient-bg glow">
                     Start Your Project
                   </Button>

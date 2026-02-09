@@ -41,40 +41,26 @@ const PremadeTemplates = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-
-      {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-30" />
         <div className="absolute top-20 right-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-blob" />
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
-
         <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="hero-content">
               <span className="inline-block px-4 py-2 rounded-full glass text-primary text-sm font-medium mb-6">Premade Templates</span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">
-                Launch Fast with <span className="gradient-text">Premade Templates</span>
-              </h1>
-              <p className="text-lg text-muted-foreground mb-8">
-                Get online quickly with our professionally designed templates. Customized to your brand and ready to launch in days.
-              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">Launch Fast with <span className="gradient-text">Premade Templates</span></h1>
+              <p className="text-lg text-muted-foreground mb-8">Get online quickly with our professionally designed templates. Customized to your brand and ready to launch in days.</p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact">
-                  <Button size="lg" className="gradient-bg">Browse Templates <ArrowRight className="ml-2 w-4 h-4" /></Button>
-                </Link>
-                <Link to="/contact">
-                  <Button size="lg" variant="outline">Request Custom</Button>
-                </Link>
+                <Link to="/contact#contact-form"><Button size="lg" className="gradient-bg">Browse Templates <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
+                <Link to="/contact#contact-form"><Button size="lg" variant="outline">Request Custom</Button></Link>
               </div>
             </div>
-            <div className="hero-image">
-              <img src={heroImage} alt="Premade Website Templates" className="w-full rounded-2xl shadow-2xl" />
-            </div>
+            <div className="hero-image"><img src={heroImage} alt="Premade Website Templates" className="w-full rounded-2xl shadow-2xl" /></div>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
       <section className="py-20 bg-muted/30">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -84,9 +70,7 @@ const PremadeTemplates = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
               <div key={index} className="glass p-6 rounded-2xl hover:scale-105 transition-transform duration-300">
-                <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mb-4">
-                  <benefit.icon className="w-6 h-6 text-white" />
-                </div>
+                <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mb-4"><benefit.icon className="w-6 h-6 text-white" /></div>
                 <h3 className="text-xl font-heading font-semibold mb-2">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.description}</p>
               </div>
@@ -95,7 +79,6 @@ const PremadeTemplates = () => {
         </div>
       </section>
 
-      {/* Templates Section */}
       <section className="py-20">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -115,23 +98,18 @@ const PremadeTemplates = () => {
                 <ul className="space-y-2 mb-6">
                   {template.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-muted-foreground">
-                      <div className="w-4 h-4 rounded-full gradient-bg flex items-center justify-center">
-                        <span className="text-white text-xs">✓</span>
-                      </div>
+                      <div className="w-4 h-4 rounded-full gradient-bg flex items-center justify-center"><span className="text-white text-xs">✓</span></div>
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <Link to="/contact">
-                  <Button className="w-full" variant="outline">Get This Template</Button>
-                </Link>
+                <Link to="/contact#contact-form"><Button className="w-full" variant="outline">Get This Template</Button></Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
       <section className="py-20 bg-muted/30">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -146,9 +124,7 @@ const PremadeTemplates = () => {
               { step: '4', title: 'Go Live', description: 'Review, approve, and launch your site!' },
             ].map((item, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-white">{item.step}</span>
-                </div>
+                <div className="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4"><span className="text-2xl font-bold text-white">{item.step}</span></div>
                 <h3 className="text-lg font-heading font-semibold mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.description}</p>
               </div>
@@ -157,16 +133,11 @@ const PremadeTemplates = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Choose a template and get your professional website live in just days.
-          </p>
-          <Link to="/contact">
-            <Button size="lg" className="gradient-bg">Contact Us Today</Button>
-          </Link>
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">Choose a template and get your professional website live in just days.</p>
+          <Link to="/contact#contact-form"><Button size="lg" className="gradient-bg">Contact Us Today</Button></Link>
         </div>
       </section>
 
