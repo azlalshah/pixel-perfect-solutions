@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Layout, Puzzle, Gauge, Shield, RefreshCw, HeadphonesIcon, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/services/wordpress.png';
+import ProcessSection from '@/components/services/ProcessSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
