@@ -37,9 +37,10 @@ const Contact = () => {
 
   useEffect(() => {
     if (location.hash === '#contact-form') {
+      window.scrollTo(0, 0);
       setTimeout(() => {
         document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 300);
+      }, 600);
     }
   }, [location]);
 
