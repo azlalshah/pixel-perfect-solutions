@@ -211,6 +211,47 @@ const UIUXDesign = () => {
         </div>
       </section>
 
+      {/* Process */}
+      <ProcessSection
+        title="Our Design Process"
+        subtitle="How We Design"
+        steps={[
+          { step: '01', title: 'Research & Discovery', description: 'User interviews, competitive analysis, and stakeholder workshops to understand needs.' },
+          { step: '02', title: 'Wireframing', description: 'Low-fidelity wireframes mapping out user flows and information architecture.' },
+          { step: '03', title: 'Visual Design', description: 'High-fidelity mockups with your brand colors, typography, and imagery.' },
+          { step: '04', title: 'Prototype & Test', description: 'Interactive prototypes tested with real users for validation and refinement.' },
+        ]}
+      />
+
+      {/* Case Studies */}
+      <CaseStudySection
+        title="Design Showcase"
+        subtitle="Featured Work"
+        cases={[
+          {
+            title: 'FinTech App Redesign',
+            category: 'Mobile UI',
+            description: 'Complete UI/UX overhaul of a banking app serving 500K+ users.',
+            image: 'https://images.unsplash.com/photo-1563986768609-322da13575f2?w=600&auto=format&fit=crop',
+            results: ['60% increase in user engagement', '40% reduction in support tickets', 'App Store rating: 4.8/5'],
+          },
+          {
+            title: 'Healthcare Dashboard',
+            category: 'Web Design',
+            description: 'Patient management dashboard with intuitive data visualization.',
+            image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&auto=format&fit=crop',
+            results: ['30% faster task completion', 'Used by 200+ hospitals', 'Accessibility AA compliant'],
+          },
+          {
+            title: 'E-Learning Platform',
+            category: 'Product Design',
+            description: 'Gamified learning experience for a K-12 education platform.',
+            image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&auto=format&fit=crop',
+            results: ['85% student retention rate', '2M+ active learners', 'Won UX Design Award 2023'],
+          },
+        ]}
+      />
+
       <Footer />
     </div>
   );

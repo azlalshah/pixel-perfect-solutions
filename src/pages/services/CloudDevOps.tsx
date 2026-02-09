@@ -245,6 +245,47 @@ const CloudDevOps = () => {
         </div>
       </section>
 
+      {/* Process */}
+      <ProcessSection
+        title="Our DevOps Process"
+        subtitle="Infrastructure Pipeline"
+        steps={[
+          { step: '01', title: 'Infrastructure Audit', description: 'Evaluate current infrastructure, identify bottlenecks and security gaps.' },
+          { step: '02', title: 'Architecture Design', description: 'Design scalable, resilient cloud architecture with IaC blueprints.' },
+          { step: '03', title: 'Implementation', description: 'Set up CI/CD pipelines, containers, monitoring, and security.' },
+          { step: '04', title: 'Ongoing Management', description: 'Continuous monitoring, optimization, and incident response.' },
+        ]}
+      />
+
+      {/* Case Studies */}
+      <CaseStudySection
+        title="Infrastructure Projects"
+        subtitle="Case Studies"
+        cases={[
+          {
+            title: 'Multi-Cloud Migration',
+            category: 'AWS + Azure',
+            description: 'Migrated a monolithic app to microservices across multiple cloud providers.',
+            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop',
+            results: ['99.99% uptime achieved', '60% cost reduction', 'Zero downtime migration'],
+          },
+          {
+            title: 'CI/CD Pipeline Automation',
+            category: 'DevOps',
+            description: 'Built fully automated deployment pipeline for a fintech company.',
+            image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop',
+            results: ['Deploy in < 5 minutes', '90% fewer manual tasks', 'SOC2 compliant'],
+          },
+          {
+            title: 'Kubernetes Platform',
+            category: 'Container Orchestration',
+            description: 'Enterprise Kubernetes platform managing 200+ microservices.',
+            image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&auto=format&fit=crop',
+            results: ['Auto-scaling to 10K+ pods', '40% infrastructure savings', '24/7 monitoring'],
+          },
+        ]}
+      />
+
       <Footer />
     </div>
   );

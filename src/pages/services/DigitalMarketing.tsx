@@ -244,6 +244,47 @@ const DigitalMarketing = () => {
         </div>
       </section>
 
+      {/* Process */}
+      <ProcessSection
+        title="Our Marketing Process"
+        subtitle="Strategy to Results"
+        steps={[
+          { step: '01', title: 'Audit & Research', description: 'Analyze your current presence, competitors, and market opportunities.' },
+          { step: '02', title: 'Strategy Development', description: 'Create a customized marketing plan aligned with your business goals.' },
+          { step: '03', title: 'Campaign Execution', description: 'Launch and manage campaigns across all relevant channels.' },
+          { step: '04', title: 'Optimize & Scale', description: 'Continuous optimization based on data to maximize ROI.' },
+        ]}
+      />
+
+      {/* Case Studies */}
+      <CaseStudySection
+        title="Marketing Results"
+        subtitle="Success Stories"
+        cases={[
+          {
+            title: 'SaaS Lead Generation',
+            category: 'B2B Marketing',
+            description: 'Comprehensive inbound marketing strategy for a SaaS company.',
+            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop',
+            results: ['500% increase in leads', '200% ROI on ad spend', '50K monthly organic visits'],
+          },
+          {
+            title: 'E-Commerce Growth',
+            category: 'Social Media',
+            description: 'Social media marketing campaign for a fashion brand.',
+            image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&auto=format&fit=crop',
+            results: ['1M+ social impressions', '300% revenue growth', '15K new followers/month'],
+          },
+          {
+            title: 'Local Business SEO',
+            category: 'SEO',
+            description: 'Local SEO campaign for a multi-location restaurant chain.',
+            image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&auto=format&fit=crop',
+            results: ['#1 ranking for 50+ keywords', '400% increase in foot traffic', 'Google Maps top 3'],
+          },
+        ]}
+      />
+
       <Footer />
     </div>
   );

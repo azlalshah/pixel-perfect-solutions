@@ -236,6 +236,47 @@ const MobileDevelopment = () => {
         </div>
       </section>
 
+      {/* Process */}
+      <ProcessSection
+        title="App Development Process"
+        subtitle="From Idea to App Store"
+        steps={[
+          { step: '01', title: 'Strategy & Planning', description: 'Define your app goals, target users, and feature roadmap.' },
+          { step: '02', title: 'UI/UX Design', description: 'Create engaging mobile interfaces optimized for touch interactions.' },
+          { step: '03', title: 'Development & QA', description: 'Build with native or cross-platform tech, with rigorous testing.' },
+          { step: '04', title: 'Launch & Iterate', description: 'App store submission, user feedback collection, and continuous improvement.' },
+        ]}
+      />
+
+      {/* Case Studies */}
+      <CaseStudySection
+        title="App Success Stories"
+        subtitle="Our Apps"
+        cases={[
+          {
+            title: 'Healthcare Appointment App',
+            category: 'iOS & Android',
+            description: 'Patient booking app with telemedicine and health tracking features.',
+            image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&auto=format&fit=crop',
+            results: ['100K+ downloads', '4.8 star rating', '60% less no-shows'],
+          },
+          {
+            title: 'Food Delivery Platform',
+            category: 'React Native',
+            description: 'Real-time delivery tracking with driver and restaurant management.',
+            image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&auto=format&fit=crop',
+            results: ['50K+ daily orders', 'Sub-30min delivery', '$5M revenue in Year 1'],
+          },
+          {
+            title: 'Fitness Tracking App',
+            category: 'Flutter',
+            description: 'Comprehensive fitness app with AI-powered workout recommendations.',
+            image: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&auto=format&fit=crop',
+            results: ['200K+ active users', '85% weekly retention', 'Featured by Apple'],
+          },
+        ]}
+      />
+
       <Footer />
     </div>
   );
