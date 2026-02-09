@@ -9,7 +9,6 @@ import { Server, Database, Shield, Zap, Code, Lock, ArrowRight } from 'lucide-re
 import heroImage from '@/assets/services/backend-development.png';
 import ProcessSection from '@/components/services/ProcessSection';
 import CaseStudySection from '@/components/services/CaseStudySection';
-import heroImage from '@/assets/services/backend-development.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
