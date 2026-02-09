@@ -106,6 +106,17 @@ const LogoDesign = () => {
         </div>
       </section>
 
+      <ProcessSection
+        title="Our Logo Design Process"
+        subtitle="How We Create"
+        steps={[
+          { step: '01', title: 'Brand Discovery', description: 'Understand your brand values, target audience, and competitors.' },
+          { step: '02', title: 'Concept Sketching', description: 'Hand-sketch multiple creative concepts and directions.' },
+          { step: '03', title: 'Digital Refinement', description: 'Digitize top concepts with color variations and typography.' },
+          { step: '04', title: 'Final Delivery', description: 'Deliver final files in all formats with usage guidelines.' },
+        ]}
+      />
+
       <section className="py-20 bg-muted/30">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Ready to Create Your Perfect Logo?</h2>
