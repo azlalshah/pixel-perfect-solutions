@@ -6,6 +6,7 @@ import ServicesShowcase from '@/components/home/ServicesShowcase';
 import StatsSection from '@/components/home/StatsSection';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
 import TechShowcase3D from '@/components/home/TechShowcase3D';
+import Animation3DSection from '@/components/home/Animation3DSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import CTASection from '@/components/home/CTASection';
 import gsap from 'gsap';
@@ -36,6 +37,7 @@ const Index = () => {
       <StatsSection />
       <WhyChooseUsSection />
       <TechShowcase3D />
+      <Animation3DSection />
       <TestimonialsSection />
       <CTASection />
       <Footer />
