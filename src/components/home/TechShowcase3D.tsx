@@ -3,9 +3,6 @@ import { Monitor, Smartphone, Cloud, Database, Globe, Cpu } from 'lucide-react';
 import shapesBackground from '@/assets/3d-shapes-bg.png';
 import techAnimation from '@/assets/lottie-tech.json';
 
-// Cartoon-style animated sphere with bounce
-const CartoonSphere = ({ position, color, scale = 1 }: { position: [number, number, number], color: string, scale?: number }) => {
-
 const TechShowcase3D = () => {
   const capabilities = [
     {
