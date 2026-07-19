@@ -2,7 +2,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Check, TrendingUp, Megaphone, BarChart3, Mail, Search, Share2 } from 'lucide-react';
+import { Check, TrendingUp, Megaphone, BarChart3, Mail, Search, Share2, Target, Facebook, Instagram, Linkedin, Music2, Youtube, Twitter, Pin } from 'lucide-react';
 import PricingPackages, { PricingPackage } from '@/components/PricingPackages';
 import FloatingElements from '@/components/FloatingElements';
 import ProcessSection from '@/components/services/ProcessSection';
@@ -62,14 +62,14 @@ const DigitalMarketing = () => {
   ];
 
   const platforms = [
-    { name: 'Google Ads', icon: '🎯' },
-    { name: 'Facebook', icon: '📘' },
-    { name: 'Instagram', icon: '📸' },
-    { name: 'LinkedIn', icon: '💼' },
-    { name: 'TikTok', icon: '🎵' },
-    { name: 'YouTube', icon: '▶️' },
-    { name: 'Twitter/X', icon: '🐦' },
-    { name: 'Pinterest', icon: '📌' },
+    { name: 'Google Ads', icon: Target },
+    { name: 'Facebook', icon: Facebook },
+    { name: 'Instagram', icon: Instagram },
+    { name: 'LinkedIn', icon: Linkedin },
+    { name: 'TikTok', icon: Music2 },
+    { name: 'YouTube', icon: Youtube },
+    { name: 'Twitter/X', icon: Twitter },
+    { name: 'Pinterest', icon: Pin },
   ];
 
   const results = [
@@ -193,15 +193,20 @@ const DigitalMarketing = () => {
           </div>
           
           <div className="flex flex-wrap justify-center gap-4">
-            {platforms.map((platform, i) => (
-              <div 
-                key={i} 
-                className="bg-card px-6 py-4 rounded-xl border border-border text-center hover:border-primary/50 hover:shadow-lg transition-all hover:-translate-y-1"
-              >
-                <span className="text-3xl mb-2 block">{platform.icon}</span>
-                <span className="font-medium text-sm">{platform.name}</span>
-              </div>
-            ))}
+            {platforms.map((platform, i) => {
+              const Icon = platform.icon;
+              return (
+                <div
+                  key={i}
+                  className="bg-card px-6 py-4 rounded-xl border border-border text-center hover:border-primary/50 hover:shadow-lg transition-all hover:-translate-y-1 group"
+                >
+                  <div className="w-12 h-12 mx-auto mb-2 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all">
+                    <Icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <span className="font-medium text-sm">{platform.name}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
