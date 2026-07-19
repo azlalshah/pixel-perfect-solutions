@@ -84,9 +84,11 @@ const RatingStars = ({ rating, size = 'w-4 h-4' }: { rating: number; size?: stri
         <Star key={`f${i}`} className={`${size} fill-yellow-400 text-yellow-400`} />
       ))}
       {hasHalf && (
-        <div className="relative">
-          <Star className={`${size} text-yellow-400`} />
-          <StarHalf className={`${size} fill-yellow-400 text-yellow-400 absolute inset-0`} />
+        <div className={`relative ${size}`}>
+          <Star className={`${size} fill-muted-foreground/20 text-muted-foreground/30 absolute inset-0`} />
+          <div className="absolute inset-0 overflow-hidden" style={{ width: '50%' }}>
+            <Star className={`${size} fill-yellow-400 text-yellow-400`} />
+          </div>
         </div>
       )}
       {Array.from({ length: empty }).map((_, i) => (
