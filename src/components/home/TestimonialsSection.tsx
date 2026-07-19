@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, StarHalf } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -20,7 +20,7 @@ const testimonials = [
       'TechNova transformed our online presence completely. Their team delivered a stunning website that exceeded our expectations and significantly increased our conversion rates.',
     author: 'Sarah Johnson',
     role: 'CEO, Startup Hub',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face',
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face',
     rating: 5,
     date: '2 weeks ago',
   },
@@ -30,7 +30,7 @@ const testimonials = [
     author: 'Michael Chen',
     role: 'Product Manager, TechFlow',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
-    rating: 5,
+    rating: 4.5,
     date: '1 month ago',
   },
   {
@@ -39,7 +39,7 @@ const testimonials = [
     author: 'Emily Rodriguez',
     role: 'Marketing Director, GrowthCo',
     avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
-    rating: 5,
+    rating: 4,
     date: '3 weeks ago',
   },
   {
@@ -48,7 +48,7 @@ const testimonials = [
     author: 'David Park',
     role: 'CTO, DataDriven',
     avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
-    rating: 5,
+    rating: 3,
     date: '2 months ago',
   },
   {
@@ -66,12 +66,35 @@ const testimonials = [
     author: 'James Wilson',
     role: 'Owner, WilsonTrade',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
-    rating: 5,
+    rating: 3.5,
     date: '5 days ago',
   },
 ];
 
 const overall = { rating: 4.9, count: 128 };
+
+const RatingStars = ({ rating, size = 'w-4 h-4' }: { rating: number; size?: string }) => {
+  const full = Math.floor(rating);
+  const hasHalf = rating - full >= 0.25 && rating - full < 0.75;
+  const fullCount = rating - full >= 0.75 ? full + 1 : full;
+  const empty = 5 - fullCount - (hasHalf ? 1 : 0);
+  return (
+    <div className="flex items-center gap-0.5">
+      {Array.from({ length: fullCount }).map((_, i) => (
+        <Star key={`f${i}`} className={`${size} fill-yellow-400 text-yellow-400`} />
+      ))}
+      {hasHalf && (
+        <div className="relative">
+          <Star className={`${size} text-yellow-400`} />
+          <StarHalf className={`${size} fill-yellow-400 text-yellow-400 absolute inset-0`} />
+        </div>
+      )}
+      {Array.from({ length: empty }).map((_, i) => (
+        <Star key={`e${i}`} className={`${size} fill-muted-foreground/20 text-muted-foreground/30`} />
+      ))}
+    </div>
+  );
+};
 
 const TestimonialsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -167,11 +190,7 @@ const TestimonialsSection = () => {
             <div className="flex items-center gap-4">
               <div className="text-4xl font-heading font-bold">{overall.rating}</div>
               <div>
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
+                <RatingStars rating={overall.rating} size="w-5 h-5" />
                 <div className="text-sm text-muted-foreground mt-1">
                   Based on {overall.count} reviews
                 </div>
@@ -213,18 +232,7 @@ const TestimonialsSection = () => {
                       </div>
 
                       <div className="flex items-center gap-2 mb-3">
-                        <div className="flex items-center gap-0.5">
-                          {[...Array(5)].map((_, s) => (
-                            <Star
-                              key={s}
-                              className={`w-4 h-4 ${
-                                s < t.rating
-                                  ? 'fill-yellow-400 text-yellow-400'
-                                  : 'text-muted-foreground/30'
-                              }`}
-                            />
-                          ))}
-                        </div>
+                        <RatingStars rating={t.rating} />
                         <span className="text-xs text-muted-foreground">{t.date}</span>
                       </div>
 
