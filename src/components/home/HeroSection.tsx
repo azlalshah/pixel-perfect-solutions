@@ -202,12 +202,11 @@ const HeroSection = () => {
             {/* Main Image Container */}
             <div className="relative z-10 animate-float">
               <div className="relative rounded-2xl overflow-hidden">
-                <Lottie
-                  animationData={heroAnimation}
-                  loop
-                  autoplay
+                <img
+                  src={heroIllustration}
+                  alt="Creative team building digital products"
                   className="w-full h-auto drop-shadow-2xl"
-                  aria-label="Developer building digital products"
+                  loading="eager"
                 />
               </div>
               
