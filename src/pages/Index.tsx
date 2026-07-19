@@ -7,6 +7,7 @@ import StatsSection from '@/components/home/StatsSection';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
 import TechShowcase3D from '@/components/home/TechShowcase3D';
 import Animation3DSection from '@/components/home/Animation3DSection';
+import LottieAnimationsSection from '@/components/home/LottieAnimationsSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import CTASection from '@/components/home/CTASection';
 import gsap from 'gsap';
@@ -38,6 +39,7 @@ const Index = () => {
       <WhyChooseUsSection />
       <TechShowcase3D />
       <Animation3DSection />
+      <LottieAnimationsSection />
       <TestimonialsSection />
       <CTASection />
       <Footer />
