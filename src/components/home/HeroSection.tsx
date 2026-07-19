@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, CheckCircle, Clock, Headphones, ThumbsUp, Users, Award, Globe } from 'lucide-react';
 import gsap from 'gsap';
-import Lottie from 'lottie-react';
-import heroAnimation from '@/assets/lottie-hero-dev.json';
+import heroIllustration from '@/assets/hero-illustration.png';
 
 const typingWords = ['Experiences', 'Solutions', 'Products', 'Platforms'];
 
@@ -203,12 +202,11 @@ const HeroSection = () => {
             {/* Main Image Container */}
             <div className="relative z-10 animate-float">
               <div className="relative rounded-2xl overflow-hidden">
-                <Lottie
-                  animationData={heroAnimation}
-                  loop
-                  autoplay
+                <img
+                  src={heroIllustration}
+                  alt="Creative team building digital products"
                   className="w-full h-auto drop-shadow-2xl"
-                  aria-label="Developer building digital products"
+                  loading="eager"
                 />
               </div>
               
