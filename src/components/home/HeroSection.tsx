@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, CheckCircle, Clock, Headphones, ThumbsUp, Users, Award, Globe } from 'lucide-react';
 import gsap from 'gsap';
-import Lottie from 'lottie-react';
-import heroAnimation from '@/assets/lottie-hero-dev.json';
+import heroIllustration from '@/assets/hero-illustration.png';
 
 const typingWords = ['Experiences', 'Solutions', 'Products', 'Platforms'];
 
