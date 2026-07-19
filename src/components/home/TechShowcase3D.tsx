@@ -1,9 +1,7 @@
-import { useRef, Suspense, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, Stars, Trail, Sparkles } from '@react-three/drei';
-import * as THREE from 'three';
+import Lottie from 'lottie-react';
 import { Monitor, Smartphone, Cloud, Database, Globe, Cpu } from 'lucide-react';
 import shapesBackground from '@/assets/3d-shapes-bg.png';
+import techAnimation from '@/assets/lottie-tech.json';
 
 // Cartoon-style animated sphere with bounce
 const CartoonSphere = ({ position, color, scale = 1 }: { position: [number, number, number], color: string, scale?: number }) => {
@@ -342,35 +340,17 @@ const TechShowcase3D = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* 3D Canvas */}
-          <div className="relative h-[450px] lg:h-[550px] rounded-2xl overflow-hidden">
-            <Suspense fallback={
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin" />
-                  <span className="text-sm text-muted-foreground">Loading 3D scene...</span>
-                </div>
-              </div>
-            }>
-              <Canvas 
-                camera={{ position: [0, 0, 8], fov: 50 }}
-                style={{ background: 'transparent' }}
-                gl={{ alpha: true, antialias: true }}
-              >
-                <Scene />
-              </Canvas>
-            </Suspense>
-            
-            {/* Glow effect */}
+          {/* Tech Animation */}
+          <div className="relative h-[450px] lg:h-[550px] rounded-2xl overflow-hidden flex items-center justify-center">
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-primary/10 blur-3xl" />
               <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-secondary/10 blur-3xl" />
             </div>
-            
-            {/* Interactive hint */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 glass px-4 py-2 rounded-full text-sm text-muted-foreground animate-bounce">
-              ✨ Watch the magic happen!
-            </div>
+            <Lottie
+              animationData={techAnimation}
+              loop
+              className="relative w-full max-w-xl drop-shadow-2xl"
+            />
           </div>
 
           {/* Capabilities Grid */}
