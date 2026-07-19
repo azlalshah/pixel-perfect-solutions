@@ -65,37 +65,17 @@ const Animation3DSection = () => {
           </p>
         </div>
 
-        {/* 3D Cartoon Characters Showcase */}
-        <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden mb-16 glass border border-border/50">
-          <Suspense
-            fallback={
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin" />
-                  <span className="text-sm text-muted-foreground">Loading 3D characters...</span>
-                </div>
-              </div>
-            }
-          >
-            <Canvas
-              camera={{ position: [0, 0, 6], fov: 50 }}
-              style={{ background: 'transparent' }}
-              gl={{ alpha: true, antialias: true }}
-            >
-              <Scene />
-            </Canvas>
-          </Suspense>
-
-          {/* Glow overlays */}
+        {/* 3D Cartoon Animation Showcase */}
+        <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden mb-16 glass border border-border/50 flex items-center justify-center">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 left-1/4 w-1/2 h-1/3 bg-accent/10 blur-3xl" />
             <div className="absolute bottom-0 right-1/4 w-1/2 h-1/3 bg-primary/10 blur-3xl" />
           </div>
-
-          {/* Hint */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 glass px-4 py-2 rounded-full text-sm text-muted-foreground">
-            🎨 Drag to interact with our cartoon friends
-          </div>
+          <Lottie
+            animationData={cartoonAnimation}
+            loop
+            className="relative w-full max-w-2xl h-full drop-shadow-2xl"
+          />
         </div>
 
         {/* Features Grid */}
