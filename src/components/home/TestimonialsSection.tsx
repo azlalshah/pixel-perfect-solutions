@@ -81,18 +81,18 @@ const RatingStars = ({ rating, size = 'w-4 h-4' }: { rating: number; size?: stri
   return (
     <div className="flex items-center gap-0.5">
       {Array.from({ length: fullCount }).map((_, i) => (
-        <Star key={`f${i}`} className={`${size} fill-yellow-400 text-yellow-400`} />
+        <Star key={`f${i}`} className={size} style={{ fill: '#facc15', color: '#facc15' }} />
       ))}
       {hasHalf && (
         <div className={`relative ${size}`}>
-          <Star className={`${size} fill-muted-foreground/20 text-muted-foreground/30 absolute inset-0`} />
+          <Star className={`${size} absolute inset-0`} style={{ fill: 'rgba(148,163,184,0.25)', color: 'rgba(148,163,184,0.5)' }} />
           <div className="absolute inset-0 overflow-hidden" style={{ width: '50%' }}>
-            <Star className={`${size} fill-yellow-400 text-yellow-400`} />
+            <Star className={size} style={{ fill: '#facc15', color: '#facc15' }} />
           </div>
         </div>
       )}
       {Array.from({ length: empty }).map((_, i) => (
-        <Star key={`e${i}`} className={`${size} fill-muted-foreground/20 text-muted-foreground/30`} />
+        <Star key={`e${i}`} className={size} style={{ fill: 'rgba(148,163,184,0.25)', color: 'rgba(148,163,184,0.5)' }} />
       ))}
     </div>
   );
