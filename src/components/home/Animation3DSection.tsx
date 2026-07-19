@@ -1,3 +1,7 @@
+import Lottie from 'lottie-react';
+import { Sparkles as SparklesIcon, Film, Wand2, Layers, Zap, Palette } from 'lucide-react';
+import cartoonAnimation from '@/assets/lottie-3d-cartoon.json';
+
 const Animation3DSection = () => {
   const features = [
     {
