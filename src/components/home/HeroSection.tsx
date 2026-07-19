@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, CheckCircle, Clock, Headphones, ThumbsUp, Users, Award, Globe } from 'lucide-react';
 import gsap from 'gsap';
 import Lottie from 'lottie-react';
-import heroAnimation from '@/assets/lottie-hero-team.json';
+import heroAnimation from '@/assets/lottie-hero-dev.json';
 
 const typingWords = ['Experiences', 'Solutions', 'Products', 'Platforms'];
 
@@ -208,7 +208,7 @@ const HeroSection = () => {
                   loop
                   autoplay
                   className="w-full h-auto drop-shadow-2xl"
-                  aria-label="Digital solutions team collaborating"
+                  aria-label="Developer building digital products"
                 />
               </div>
               
